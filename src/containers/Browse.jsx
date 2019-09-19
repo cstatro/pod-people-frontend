@@ -3,7 +3,11 @@ import React, { Component } from "react";
 class Browse extends Component {
   state = {};
   render() {
-    return <div></div>;
+    return (
+      <div className="browser page">
+        <h1>Browsing page</h1>
+      </div>
+    );
   }
 }
 
