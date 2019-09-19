@@ -54,3 +54,9 @@ html {
   display: flex;
   flex-direction: column;
 }
+.search-results {
+  height: 70%;
+  width: 95%;
+  border: 1px solid black;
+  overflow: scroll;
+}

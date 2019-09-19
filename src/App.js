@@ -15,6 +15,13 @@ function App() {
           <Route path={"/home"} render={() => <Home />} />
           <Route path={"/browse"} render={() => <Browse />} />
           <Route path={"/lists"} render={() => <Lists />} />
+          <Route
+            path={"/podcast/:name"}
+            render={props => {
+              const { rss } = props.history.location;
+              return <Lists rss={rss} />;
+            }}
+          />
         </Switch>
       </div>
     </div>
