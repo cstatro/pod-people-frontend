@@ -1,9 +1,14 @@
 import React from "react";
+const R = require("ramda");
+
 const SearchBar = props => {
+  const { setTerm } = props;
   const handleSubmit = e => {
     e.preventDefault();
-    console.log("you did it");
+    const searchVal = R.replace(/ /g, "+", e.target.firstChild.value);
+    setTerm(searchVal);
   };
+
   return (
     <div onSubmit={handleSubmit} className="searchbar">
       <form>
