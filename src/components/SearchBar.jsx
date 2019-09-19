@@ -6,7 +6,7 @@ const SearchBar = props => {
   };
   return (
     <div onSubmit={handleSubmit} className="searchbar">
-      <form action="">
+      <form>
         <input
           type="text"
           className="search-text"
