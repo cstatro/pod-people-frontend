@@ -44,3 +44,13 @@ html {
   margin: 0;
   display: flex;
 }
+
+/* Browse Page Styling */
+.search-column {
+  height: 85%;
+  width: 40%;
+  border: 1px solid black;
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+}
