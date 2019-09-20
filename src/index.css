@@ -60,3 +60,38 @@ html {
   border: 1px solid black;
   overflow: scroll;
 }
+
+/* Podcast Show Page Styling */
+.podcast-show {
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+.podcast-show-card {
+  border: 1px solid black;
+  height: 40%;
+  width: 70%;
+  margin-top: 2.5em;
+  display: flex;
+  align-items: center;
+}
+.podcast-show-pic {
+  height: 80%;
+  width: 20%;
+  border: 1px solid black;
+  margin-left: 2em;
+  display: flex;
+  align-items: center;
+}
+.podcast-show-details {
+  height: 90%;
+  width: 75%;
+  border: 1px solid black;
+  margin-left: 1em;
+  display: flex;
+}
+.podcast-show-pic > img {
+  width: 100%;
+  height: auto;
+}
