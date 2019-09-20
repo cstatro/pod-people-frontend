@@ -5,6 +5,7 @@ import { Route, Switch, withRouter } from "react-router-dom";
 import Browse from "./containers/Browse";
 import Home from "./containers/Home";
 import Lists from "./containers/Lists";
+import PodCastShow from "./containers/PodCastShow";
 
 function App() {
   return (
@@ -16,10 +17,10 @@ function App() {
           <Route path={"/browse"} render={() => <Browse />} />
           <Route path={"/lists"} render={() => <Lists />} />
           <Route
-            path={"/podcast/:name"}
+            path={"/podcast/:id"}
             render={props => {
-              const { rss } = props.history.location;
-              return <Lists rss={rss} />;
+              const rss = props.history.location.rss;
+              return <PodCastShow rss={rss} />;
             }}
           />
         </Switch>
