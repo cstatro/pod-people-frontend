@@ -32,6 +32,9 @@ html {
   margin-left: 1em;
   margin-right: 1em;
 }
+.loading {
+  height: 100%;
+}
 /* Main Area Styling */
 .main-area {
   height: 90%;
@@ -119,6 +122,8 @@ html {
   width: 40%;
   height: 100%;
   border: 1px solid black;
+  overflow: scroll;
+  padding: 2px;
 }
 .episode-list {
   height: 55%;
@@ -130,7 +135,12 @@ html {
   flex-direction: column;
 }
 .episode-card {
-  height: 7em;
+  min-height: 7em;
+
   border-bottom: 1px solid black;
   display: flex;
+}
+.episode-card > img {
+  height: 90%;
+  width: auto;
 }
