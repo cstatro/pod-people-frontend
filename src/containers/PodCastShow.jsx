@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import ShowDetails from "../components/ShowDetails";
+import EpisodeList from "../components/EpisodeList";
 const Parser = require("rss-parser");
 
 const PodCastShow = props => {
@@ -23,7 +24,11 @@ const PodCastShow = props => {
   }, []);
   return (
     <div className="podcast-show page">
-      {!!rssFeed ? <ShowDetails {...rssFeed} /> : null}
+      {!!rssFeed ? (
+        <>
+          <ShowDetails {...rssFeed} /> <EpisodeList />
+        </>
+      ) : null}
     </div>
   );
 };
