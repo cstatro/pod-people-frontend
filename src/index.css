@@ -47,6 +47,27 @@ html {
   margin: 0;
   display: flex;
 }
+/* Audio Player Styling */
+.react-h5-audio-player {
+  margin-left: 10em;
+  width: 400px;
+}
+.react-h5-audio-player > .flex {
+  background: none !important;
+  box-shadow: none !important;
+}
+.toggle-play-button {
+  background: rgb(158, 158, 223) !important;
+}
+.pause-icon {
+  box-shadow: rgb(158, 158, 223) 7px 0px 0px 0px inset !important;
+}
+.indicator {
+  background: rgb(158, 158, 223) !important;
+}
+.volumn {
+  border-bottom: 15px solid rgb(158, 158, 223) !important;
+}
 
 /* Browse Page Styling */
 .search-column {

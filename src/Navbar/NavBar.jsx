@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Player from "./Player";
 
 class NavBar extends Component {
   state = {};
@@ -17,6 +18,7 @@ class NavBar extends Component {
         <Link to="/lists">
           <h2 className="nav-link">Lists</h2>
         </Link>
+        <Player />
       </div>
     );
   }
