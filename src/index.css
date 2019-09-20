@@ -126,4 +126,11 @@ html {
   margin-top: 2px;
   border: 1px solid black;
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.episode-card {
+  height: 7em;
+  border-bottom: 1px solid black;
+  display: flex;
 }
