@@ -27,6 +27,7 @@ html {
   margin-right: 0.5em;
   font-family: "Permanent Marker", cursive;
 }
+
 .logo {
   font-family: "Permanent Marker", cursive;
   margin-left: 1em;
@@ -34,6 +35,15 @@ html {
 }
 .loading {
   height: 100%;
+}
+/* Modal Page Styling */
+.modal {
+  position: fixed;
+  background: white;
+  left: 25%;
+  width: 50%;
+  height: 60%;
+  top: 20%;
 }
 /* Main Area Styling */
 .main-area {

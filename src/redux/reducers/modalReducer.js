@@ -6,7 +6,8 @@ const defaultState = {
 export const modalState = (state = defaultState, action) => {
   switch (action.type) {
     case "EPISODE_TO_LIST":
-      break;
+      const newState = { ...state, active: true };
+      return newState;
 
     default:
       return state;

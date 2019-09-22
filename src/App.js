@@ -8,12 +8,15 @@ import Lists from "./containers/Lists";
 import PodCastShow from "./containers/PodCastShow";
 import { connect } from "react-redux";
 import { mapModalStateToProps } from "./redux/actions/mapStateToProps/modalState";
+import Modal from "./containers/Modal";
 
 function App(props) {
+  const { active, episode } = props;
   return (
     <div className="App">
       <NavBar />
       <div className="main-area">
+        {active ? <Modal {...episode} /> : null}
         <Switch>
           <Route path={"/home"} render={() => <Home />} />
           <Route path={"/browse"} render={() => <Browse />} />
