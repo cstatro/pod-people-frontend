@@ -5,6 +5,9 @@ const defaultState = {
 
 export const playerState = (state = defaultState, action) => {
   switch (action.type) {
+    case "SET_CURRENT_TRACK":
+      const newState = { ...state, currentTrack: action.link };
+      return newState;
     default:
       return state;
   }

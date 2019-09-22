@@ -1,15 +1,23 @@
 import React from "react";
+import { connect } from "react-redux";
+import { mapPlayerDispatchAction } from "../redux/actions/dispatchActions/EpisodeShowCardActions";
 
 const EpisodeCard = props => {
-  const { itunes, title, pubDate } = props;
+  const { itunes, title, pubDate, setCurrentTrack, enclosure } = props;
 
   return (
     <div className="episode-card">
       <img src={itunes.image} alt="" />
       <h4>{title}</h4>
       <h4>{pubDate}</h4>
+      <button onClick={() => setCurrentTrack(enclosure.url)}>
+        click to play
+      </button>
     </div>
   );
 };
 
-export default EpisodeCard;
+export default connect(
+  null,
+  mapPlayerDispatchAction
+)(EpisodeCard);
