@@ -6,8 +6,10 @@ import Browse from "./containers/Browse";
 import Home from "./containers/Home";
 import Lists from "./containers/Lists";
 import PodCastShow from "./containers/PodCastShow";
+import { connect } from "react-redux";
+import { mapModalStateToProps } from "./redux/actions/mapStateToProps/modalState";
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <NavBar />
@@ -29,4 +31,4 @@ function App() {
   );
 }
 
-export default withRouter(App);
+export default connect(mapModalStateToProps)(withRouter(App));
