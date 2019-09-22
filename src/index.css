@@ -37,6 +37,12 @@ html {
   height: 100%;
 }
 /* Modal Page Styling */
+.modal-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(128, 128, 128, 0.445);
+}
 .modal {
   position: fixed;
   background: white;
