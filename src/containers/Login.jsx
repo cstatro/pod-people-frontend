@@ -5,7 +5,13 @@ class Login extends Component {
   render() {
     return (
       <div className="login-area page">
-        <div className="login-box"></div>
+        <div className="login-box">
+          <form className="login-form">
+            <input placeholder="Username" type="text" />
+            <input placeholder="Password" type="password" />
+            <input type="submit" value="Login" />
+          </form>
+        </div>
       </div>
     );
   }

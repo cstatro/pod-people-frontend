@@ -189,9 +189,20 @@ html {
 }
 .login-box {
   display: flex;
+  flex-direction: column;
   height: 60%;
   width: 40%;
   background: rgb(120, 120, 243);
   box-shadow: 1px 1px 2px 2px black;
   margin-top: 5em;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form > input {
+  width: 50%;
+  height: 3em;
 }
