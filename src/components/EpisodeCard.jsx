@@ -3,7 +3,14 @@ import { connect } from "react-redux";
 import { mapPlayerDispatchAction } from "../redux/actions/dispatchActions/EpisodeShowCardActions";
 
 const EpisodeCard = props => {
-  const { itunes, title, pubDate, setCurrentTrack, enclosure } = props;
+  const {
+    itunes,
+    title,
+    pubDate,
+    setCurrentTrack,
+    enclosure,
+    openModal
+  } = props;
 
   return (
     <div className="episode-card">
@@ -13,6 +20,7 @@ const EpisodeCard = props => {
       <button onClick={() => setCurrentTrack(enclosure.url)}>
         click to play
       </button>
+      <button onClick={() => openModal(props)}>Add To List</button>
     </div>
   );
 };

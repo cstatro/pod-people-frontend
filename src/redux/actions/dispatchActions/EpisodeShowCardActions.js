@@ -4,5 +4,5 @@
 
 export const mapPlayerDispatchAction = dispatch => ({
   setCurrentTrack: link => dispatch({ type: "SET_CURRENT_TRACK", link }),
-  openModal: () => dispatch({ type: "EPISODE_TO_LIST" })
+  openModal: episode => dispatch({ type: "EPISODE_TO_LIST", episode })
 });
