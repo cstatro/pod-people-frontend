@@ -206,3 +206,9 @@ html {
   width: 50%;
   height: 3em;
 }
+/* List Page */
+.list-manager {
+  width: 50%;
+  height: 90%;
+  border: 1px solid black;
+}
