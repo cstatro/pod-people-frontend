@@ -7,7 +7,7 @@ import Home from "./containers/Home";
 import Lists from "./containers/Lists";
 import PodCastShow from "./containers/PodCastShow";
 import { connect } from "react-redux";
-import { mapModalStateToProps } from "./redux/actions/mapStateToProps/modalState";
+import { mapAppStateToProps } from "./redux/actions/mapStateToProps/modalState";
 import Modal from "./containers/Modal";
 import Login from "./containers/Login";
 
@@ -36,4 +36,4 @@ function App(props) {
   );
 }
 
-export default connect(mapModalStateToProps)(withRouter(App));
+export default connect(mapAppStateToProps)(withRouter(App));
