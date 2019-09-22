@@ -183,3 +183,15 @@ html {
   height: 90%;
   width: auto;
 }
+/* Login Page */
+.login-area {
+  justify-content: center;
+}
+.login-box {
+  display: flex;
+  height: 60%;
+  width: 40%;
+  background: rgb(120, 120, 243);
+  box-shadow: 1px 1px 2px 2px black;
+  margin-top: 5em;
+}
