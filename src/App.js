@@ -9,6 +9,7 @@ import PodCastShow from "./containers/PodCastShow";
 import { connect } from "react-redux";
 import { mapModalStateToProps } from "./redux/actions/mapStateToProps/modalState";
 import Modal from "./containers/Modal";
+import Login from "./containers/Login";
 
 function App(props) {
   const { active, episode } = props;
@@ -28,6 +29,7 @@ function App(props) {
               return <PodCastShow rss={rss} />;
             }}
           />
+          <Route path={"/"} render={() => <Login />} />
         </Switch>
       </div>
     </div>
