@@ -4,8 +4,9 @@ const defaultState = {
 
 export const userState = (state = defaultState, action) => {
   switch (action.type) {
-    // case value:
-    //   break;
+    case "UPDATE_USER":
+      console.log(action.json);
+      return { user: { ...action.json } };
 
     default:
       return state;

@@ -6,9 +6,10 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { rootReducer } from "./redux/reducers/RootReducer";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
-const appStore = createStore(rootReducer);
+const appStore = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={appStore}>
