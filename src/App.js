@@ -12,12 +12,12 @@ import Modal from "./containers/Modal";
 import Login from "./containers/Login";
 
 function App(props) {
-  const { active, episode } = props;
+  const { active, episode, loggedIn } = props;
   return (
     <div className="App">
       <NavBar />
       <div className="main-area">
-        {active ? <Modal {...episode} /> : null}
+        {active ? <Modal {...episode} user={loggedIn} /> : null}
         <Switch>
           <Route path={"/home"} render={() => <Home />} />
           <Route path={"/browse"} render={() => <Browse />} />

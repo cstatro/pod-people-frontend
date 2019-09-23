@@ -1,9 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { modalActions } from "../redux/actions/dispatchActions/ModalActions";
-
+import { useEffect } from "react";
 const Modal = props => {
   const { closeModal, title, itunes } = props;
+
+  useEffect(() => {}, []);
 
   const handleClick = e => {
     e.stopPropagation();
