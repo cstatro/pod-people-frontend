@@ -8,6 +8,8 @@ import { podcastShowPageActions } from "../redux/actions/dispatchActions/podCast
 const Parser = require("rss-parser");
 
 const PodCastShow = props => {
+  const { setPodCast } = props;
+
   const [rssFeed, setRssFeed] = useState(null);
   useEffect(() => {
     fetch("http://localhost:3000/grab-feed", {
@@ -26,8 +28,15 @@ const PodCastShow = props => {
 
   useEffect(() => {
     if (rssFeed) {
-      // const {} = rssFeed;
-      console.log(rssFeed);
+      const { title: name, itunes } = rssFeed;
+      const podcast = {
+        name,
+        publisher: itunes.author,
+        image_url: itunes.image,
+        genre: itunes.categories[0],
+        feed: props.rss
+      };
+      setPodCast(podcast);
     }
   });
   return (
