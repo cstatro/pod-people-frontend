@@ -1,13 +1,28 @@
 import React, { Component } from "react";
+import { postConfig } from "../api/config";
+import { newListFormState } from "../redux/actions/mapStateToProps/newListFormState";
+import { connect } from "react-redux";
 
 class NewListForm extends Component {
   state = { name: "", description: "" };
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+  handleSubmit = e => {
+    e.preventDefault();
+    const { user_id, setViewForm } = this.props;
+    const config = postConfig({ ...this.state, user_id });
+    fetch("http://localhost:3000/lists", config)
+      .then(r => r.json())
+      .then(json => {
+        console.log(json);
+        setViewForm(false);
+      });
+  };
+
   render() {
     return (
-      <form className="new-list">
+      <form onSubmit={this.handleSubmit} className="new-list">
         <input
           onChange={this.handleChange}
           name="name"
@@ -26,4 +41,4 @@ class NewListForm extends Component {
   }
 }
 
-export default NewListForm;
+export default connect(newListFormState)(NewListForm);

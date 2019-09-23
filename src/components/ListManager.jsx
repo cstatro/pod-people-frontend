@@ -6,7 +6,7 @@ const ListManager = props => {
   return (
     <div className="list-manager">
       {viewForm ? (
-        <NewListForm />
+        <NewListForm setViewForm={setViewForm} />
       ) : (
         <button onClick={() => setViewForm(true)}>New List</button>
       )}
