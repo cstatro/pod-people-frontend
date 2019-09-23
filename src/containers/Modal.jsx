@@ -16,6 +16,7 @@ const Modal = props => {
   };
   const handleButton = () => {
     const config = postConfig({ list_id, user_id: user.id });
+    fetch();
     closeModal();
   };
   const handleChange = e => {
