@@ -219,3 +219,8 @@ html {
   width: 95%;
   border: 1px solid black;
 }
+.hot-lists {
+  border: 1px solid black;
+  width: 40%;
+  height: 40%;
+}
