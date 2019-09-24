@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { postConfig } from "../api/config";
 
-class LoginForm extends Component {
+class SignUp extends Component {
   state = {};
 
   handleChange = e => {
@@ -11,7 +11,7 @@ class LoginForm extends Component {
     e.preventDefault();
     console.log({ ...this.state });
     const config = postConfig({ ...this.state });
-    fetch("http://localhost:3000/login", config)
+    fetch("http://localhost:3000/users", config)
       .then(r => r.json())
       .then(json => console.log(json));
   };
@@ -19,24 +19,32 @@ class LoginForm extends Component {
     return (
       <div className="login-area page">
         <div className="login-box">
-          <form onSubmit={this.handleSubmit} className="login-form">
+          <form onSubmit={this.handleSubmit}>
             <input
               onChange={this.handleChange}
-              placeholder="Username"
-              name="username"
               type="text"
+              name="name"
+              placeholder="name"
             />
             <input
               onChange={this.handleChange}
-              placeholder="Password"
-              name="password"
-              type="password"
+              type="text"
+              name="username"
+              placeholder="username"
             />
-            <input type="submit" value="Login" />
+            <input
+              onChange={this.handleChange}
+              type="password"
+              name="password"
+              id=""
+              placeholder="password"
+            />
+            <input type="submit" value="Create New User" />
           </form>
         </div>
       </div>
     );
   }
 }
-export default LoginForm;
+
+export default SignUp;

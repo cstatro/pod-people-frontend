@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import LoginForm from "../components/LoginForm";
+import SignUp from "../components/SignUp";
 
 class Login extends Component {
   state = { createNew: false };
   render() {
     const { createNew } = this.state;
-    return <>{createNew ? null : <LoginForm />}</>;
+    return <>{createNew ? <SignUp /> : <LoginForm />}</>;
   }
 }
 
