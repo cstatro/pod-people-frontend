@@ -10,6 +10,7 @@ const ListManager = props => {
         <NewListForm setViewForm={setViewForm} />
       ) : (
         <>
+          <h1>List Manager</h1>
           <button onClick={() => setViewForm(true)}>New List</button>
           <CurrentUserLists />
         </>

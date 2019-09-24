@@ -1,19 +1,11 @@
 import React, { Component } from "react";
+import LoginForm from "../components/LoginForm";
 
 class Login extends Component {
-  state = {};
+  state = { createNew: false };
   render() {
-    return (
-      <div className="login-area page">
-        <div className="login-box">
-          <form className="login-form">
-            <input placeholder="Username" type="text" />
-            <input placeholder="Password" type="password" />
-            <input type="submit" value="Login" />
-          </form>
-        </div>
-      </div>
-    );
+    const { createNew } = this.state;
+    return <>{createNew ? null : <LoginForm />}</>;
   }
 }
 

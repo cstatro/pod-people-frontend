@@ -6,7 +6,6 @@ class Lists extends Component {
   render() {
     return (
       <div className="lists page">
-        <h1>Lists Page</h1>
         <ListManager />
       </div>
     );
