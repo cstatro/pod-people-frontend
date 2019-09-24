@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { postConfig } from "../api/config";
-
+import { loginActions } from "../redux/actions/dispatchActions/loginActions";
+import { connect } from "react-redux";
 class LoginForm extends Component {
   state = {};
 
@@ -8,12 +9,13 @@ class LoginForm extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   handleSubmit = e => {
+    const { setUser } = this.props;
     e.preventDefault();
     console.log({ ...this.state });
     const config = postConfig({ ...this.state });
     fetch("http://localhost:3000/login", config)
       .then(r => r.json())
-      .then(json => console.log(json));
+      .then(json => setUser(json));
   };
   render() {
     return (
@@ -39,4 +41,8 @@ class LoginForm extends Component {
     );
   }
 }
-export default LoginForm;
+
+export default connect(
+  null,
+  loginActions
+)(LoginForm);

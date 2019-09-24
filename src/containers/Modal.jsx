@@ -7,7 +7,7 @@ const Modal = props => {
   const { closeModal, title, itunes, refreshUser, user, enclosure } = props;
 
   useEffect(() => {
-    refreshUser(1);
+    refreshUser(user.id);
   }, []);
   const [list_id, setList] = useState(null);
 
@@ -55,6 +55,7 @@ const Modal = props => {
         {!!user.lists ? (
           <>
             <select name="list_id" onChange={handleChange}>
+              <option value={null}>Please Choose A List</option>{" "}
               {user.lists.map(l => (
                 <option value={l.id}>{l.name}</option>
               ))}
