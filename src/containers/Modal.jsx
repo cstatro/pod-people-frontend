@@ -49,7 +49,7 @@ const Modal = props => {
 
   return (
     <div onClick={closeModal} className="modal-wrap">
-      <div onClick={handleClick} className="modal">
+      {/* <div onClick={handleClick} className="modal">
         <h2>{title}</h2>
         <p>{itunes.summary}</p>
         {!!user.lists ? (
@@ -63,7 +63,7 @@ const Modal = props => {
             <button onClick={handleButton}>+</button>
           </>
         ) : null}
-      </div>
+      </div> */}
     </div>
   );
 };

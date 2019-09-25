@@ -13,13 +13,18 @@ import Login from "./containers/Login";
 import ListShowPage from "./containers/ListShowPage";
 
 function App(props) {
-  const { active, episode, loggedIn, podcast } = props;
+  const { active, displayObj, loggedIn, podcast, objectType } = props;
   return (
     <div className="App">
       <NavBar />
       <div className="main-area">
         {active ? (
-          <Modal podcast={podcast} {...episode} user={loggedIn} />
+          <Modal
+            podcast={podcast}
+            displayObj={displayObj}
+            objectType={objectType}
+            user={loggedIn}
+          />
         ) : null}
         <Switch>
           <Route path={"/home"} render={() => <Home />} />

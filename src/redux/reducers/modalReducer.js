@@ -1,12 +1,18 @@
 const defaultState = {
   active: false,
-  episode: {}
+  objectType: null,
+  displayObj: {}
 };
 
 export const modalState = (state = defaultState, action) => {
   switch (action.type) {
-    case "EPISODE_TO_LIST":
-      const newState = { ...state, active: true, episode: action.episode };
+    case "OPEN_MODAL":
+      const newState = {
+        ...state,
+        active: true,
+        displayObj: action.displayObj,
+        objectType: action.objectType
+      };
       return newState;
     case "CLOSE_MODAL":
       return defaultState;
