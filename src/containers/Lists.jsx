@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ListManager from "../components/ListManager";
 import HotLists from "../components/HotLists";
+import ListsFollowed from "../components/ListsFollowed";
 
 class Lists extends Component {
   state = {};
@@ -8,7 +9,11 @@ class Lists extends Component {
     return (
       <div className="lists page">
         <ListManager />
-        <HotLists />
+
+        <div className="list-mini-dashboards">
+          <HotLists />
+          <ListsFollowed />
+        </div>
       </div>
     );
   }

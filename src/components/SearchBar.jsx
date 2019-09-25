@@ -1,4 +1,5 @@
 import React from "react";
+import search from "../image/search.png";
 const R = require("ramda");
 
 const SearchBar = props => {
@@ -11,13 +12,20 @@ const SearchBar = props => {
 
   return (
     <div onSubmit={handleSubmit} className="searchbar">
-      <form>
+      <form className="search-form">
+        {/* <h3>Search Form</h3> */}
         <input
           type="text"
           className="search-text"
           placeholder="Search For Podcast"
         />
-        <input type="submit" value="" className="search-button" />
+        {/* <input type="submit" value="" className="search-button" /> */}
+        <input
+          type="image"
+          src={search}
+          name="submit"
+          className="search-logo"
+        />
       </form>
     </div>
   );

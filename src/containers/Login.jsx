@@ -6,7 +6,21 @@ class Login extends Component {
   state = { createNew: false };
   render() {
     const { createNew } = this.state;
-    return <>{createNew ? <SignUp /> : <LoginForm />}</>;
+    return (
+      <>
+        {createNew ? (
+          <SignUp />
+        ) : (
+          <>
+            {" "}
+            <LoginForm />
+            <button onClick={() => this.setState({ createNew: true })}>
+              Signup
+            </button>
+          </>
+        )}
+      </>
+    );
   }
 }
 
