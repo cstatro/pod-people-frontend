@@ -49,8 +49,8 @@ const Modal = props => {
 
   return (
     <div onClick={closeModal} className="modal-wrap">
-      {/* <div onClick={handleClick} className="modal">
-        <h2>{title}</h2>
+      <div onClick={handleClick} className="modal">
+        {/* <h2>{title}</h2>
         <p>{itunes.summary}</p>
         {!!user.lists ? (
           <>
@@ -62,8 +62,8 @@ const Modal = props => {
             </select>
             <button onClick={handleButton}>+</button>
           </>
-        ) : null}
-      </div> */}
+        ) : null} */}
+      </div>
     </div>
   );
 };
