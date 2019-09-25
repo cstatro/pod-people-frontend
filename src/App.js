@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { mapAppStateToProps } from "./redux/actions/mapStateToProps/modalState";
 import Modal from "./containers/Modal";
 import Login from "./containers/Login";
+import ListShowPage from "./containers/ListShowPage";
 
 function App(props) {
   const { active, episode, loggedIn, podcast } = props;
@@ -23,6 +24,7 @@ function App(props) {
         <Switch>
           <Route path={"/home"} render={() => <Home />} />
           <Route path={"/browse"} render={() => <Browse />} />
+          <Route path={"/list/:id"} render={() => <ListShowPage />} />
           <Route path={"/lists"} render={() => <Lists />} />
           <Route
             path={"/podcast/:id"}
