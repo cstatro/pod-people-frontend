@@ -24,7 +24,10 @@ function App(props) {
         <Switch>
           <Route path={"/home"} render={() => <Home />} />
           <Route path={"/browse"} render={() => <Browse />} />
-          <Route path={"/list/:id"} render={() => <ListShowPage />} />
+          <Route
+            path={"/list/:id"}
+            render={props => <ListShowPage paramId={props.match.params.id} />}
+          />
           <Route path={"/lists"} render={() => <Lists />} />
           <Route
             path={"/podcast/:id"}

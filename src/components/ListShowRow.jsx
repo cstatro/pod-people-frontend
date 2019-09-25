@@ -2,6 +2,7 @@ import React from "react";
 import { postConfig } from "../api/config";
 import { connect } from "react-redux";
 import { listShowRowActions } from "../redux/actions/dispatchActions/ListShowRowActions";
+import { Link } from "react-router-dom";
 
 const ListShowRow = props => {
   const { name, fetchUser, showFollow } = props;
@@ -18,7 +19,9 @@ const ListShowRow = props => {
     <div className="mini-list-show-row">
       {name}
       {showFollow ? <button onClick={followList}>follow</button> : null}
-      <button>maybe a show page</button>
+      <Link to={`/list/${props.id}`}>
+        <button>View</button>
+      </Link>
     </div>
   );
 };
