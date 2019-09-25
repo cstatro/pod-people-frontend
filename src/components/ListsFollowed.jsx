@@ -4,11 +4,12 @@ import { connect } from "react-redux";
 import ListShowRow from "./ListShowRow";
 
 const ListsFollowed = props => {
-  const { lists } = props;
+  const { followed_lists: lists } = props.user;
+  console.log(lists);
   return (
     <div className="lists-followed">
       {lists.map(l => (
-        <ListShowRow {...l} />
+        <ListShowRow showFollow={false} {...l} />
       ))}
     </div>
   );

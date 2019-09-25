@@ -20,7 +20,7 @@ const HotLists = props => {
         {hotLists
           .filter(l => l.user_id != user.id)
           .map(l => (
-            <ListShowRow user_id={user.id} {...l} />
+            <ListShowRow loggedInId={user.id} {...l} />
           ))}
       </ul>
     </div>
