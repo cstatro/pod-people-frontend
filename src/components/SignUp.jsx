@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { postConfig } from "../api/config";
+import { connect } from "react-redux";
+import { SignUpActions } from "../redux/actions/dispatchActions/SignUpActions";
+import { withRouter } from "react-router-dom";
 
 class SignUp extends Component {
   state = {};
@@ -8,12 +11,16 @@ class SignUp extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   handleSubmit = e => {
+    const { fetchUser } = this.props;
     e.preventDefault();
     console.log({ ...this.state });
     const config = postConfig({ ...this.state });
     fetch("http://localhost:3000/users", config)
       .then(r => r.json())
-      .then(json => console.log(json));
+      .then(json => {
+        fetchUser(json.id);
+        this.props.history.push("/home");
+      });
   };
   render() {
     return (
@@ -47,4 +54,7 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default connect(
+  null,
+  SignUpActions
+)(withRouter(SignUp));
