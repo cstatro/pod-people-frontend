@@ -3,66 +3,45 @@ import { connect } from "react-redux";
 import { modalActions } from "../redux/actions/dispatchActions/ModalActions";
 import { useEffect, useState } from "react";
 import { postConfig } from "../api/config";
+import EpisodeRssShow from "../components/SubModal/EpisodeRssShow";
+import PodCastRssShow from "../components/SubModal/PodCastRssShow";
 const Modal = props => {
-  const { closeModal, title, itunes, refreshUser, user, enclosure } = props;
+  const { closeModal, refreshUser, user, objectType } = props;
 
   useEffect(() => {
     refreshUser(user.id);
   }, []);
-  const [list_id, setList] = useState(null);
 
   const handleClick = e => {
     e.stopPropagation();
   };
-  const handleButton = () => {
-    // const config = postConfig({ list_id, user_id: user.id });
-    const podcastConfig = postConfig(props.podcast);
-    fetch("http://localhost:3000/podcasts", podcastConfig)
-      .then(r => r.json())
-      .then(json => {
-        const episode = {
-          podcast_id: json.id,
-          title: title,
-          image_url: itunes.image_url,
-          audio_link: enclosure.url,
-          run_time: itunes.duration
-        };
-        const episodeConfig = postConfig(episode);
-        fetch("http://localhost:3000/episodes", episodeConfig)
-          .then(r => r.json())
-          .then(json => {
-            console.log(json);
-            const episodeJoin = { list_id, episode_id: json.id };
-            const episodeJoinConfig = postConfig(episodeJoin);
-            fetch(
-              "http://localhost:3000/episode_list_joins",
-              episodeJoinConfig
-            );
-          });
-      });
-    closeModal();
-  };
-  const handleChange = e => {
-    setList(parseInt(e.target.value));
-    console.log(e.target.value);
-  };
 
+  const serveComponent = () => {
+    switch (objectType) {
+      case "episode":
+        return (
+          <EpisodeRssShow
+            podcast={props.podcast}
+            {...props.displayObj}
+            user={user}
+          />
+        );
+      case "podcast":
+        return (
+          <PodCastRssShow
+            podcast={props.podcast}
+            description={props.displayObj}
+            user={user}
+          />
+        );
+      default:
+        return <h1> There was a problem loading this</h1>;
+    }
+  };
   return (
     <div onClick={closeModal} className="modal-wrap">
       <div onClick={handleClick} className="modal">
-        {/* <h2>{title}</h2>
-        <p>{itunes.summary}</p>
-        {!!user.lists ? (
-          <>
-            <select name="list_id" onChange={handleChange}>
-              <option value={null}>Please Choose A List</option>{" "}
-              {user.lists.map(l => (
-                <option value={l.id}>{l.name}</option>
-              ))}
-            </select>
-            <button onClick={handleButton}>+</button>
-          </>
-        ) : null} */}
+        {serveComponent()}
       </div>
     </div>
   );

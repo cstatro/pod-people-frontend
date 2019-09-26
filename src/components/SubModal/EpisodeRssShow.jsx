@@ -1,0 +1,73 @@
+import React from "react";
+import { useState, useEffect } from "react";
+import { postConfig } from "../../api/config";
+import { connect } from "react-redux";
+import { modalActions } from "../../redux/actions/dispatchActions/ModalActions";
+
+const EpisodeRssShow = props => {
+  const {
+    closeModal,
+    title,
+    itunes,
+    refreshUser,
+    user,
+    enclosure,
+    objectType
+  } = props;
+  const [list_id, setList] = useState(null);
+  const handleChange = e => {
+    setList(parseInt(e.target.value));
+    console.log(e.target.value);
+  };
+  const handleButton = () => {
+    // const config = postConfig({ list_id, user_id: user.id });
+    const podcastConfig = postConfig(props.podcast);
+    fetch("http://localhost:3000/podcasts", podcastConfig)
+      .then(r => r.json())
+      .then(json => {
+        const episode = {
+          podcast_id: json.id,
+          title: title,
+          image_url: itunes.image_url,
+          audio_link: enclosure.url,
+          run_time: itunes.duration
+        };
+        const episodeConfig = postConfig(episode);
+        fetch("http://localhost:3000/episodes", episodeConfig)
+          .then(r => r.json())
+          .then(json => {
+            console.log(json);
+            const episodeJoin = { list_id, episode_id: json.id };
+            const episodeJoinConfig = postConfig(episodeJoin);
+            fetch(
+              "http://localhost:3000/episode_list_joins",
+              episodeJoinConfig
+            );
+          });
+      });
+    closeModal();
+  };
+
+  return (
+    <>
+      <h2>{title}</h2>
+      <p>{itunes.summary}</p>
+      {!!user.lists ? (
+        <>
+          <select name="list_id" onChange={handleChange}>
+            <option value={null}>Please Choose A List</option>{" "}
+            {user.lists.map(l => (
+              <option value={l.id}>{l.name}</option>
+            ))}
+          </select>
+          <button onClick={handleButton}>+</button>
+        </>
+      ) : null}
+    </>
+  );
+};
+
+export default connect(
+  null,
+  modalActions
+)(EpisodeRssShow);

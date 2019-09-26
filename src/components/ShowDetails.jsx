@@ -1,7 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
+import { podcastDetailsActions } from "../redux/actions/dispatchActions/podCastDetailsActions";
 
 const ShowDetails = props => {
-  const { itunes, items, title, description } = props;
+  const { itunes, title, description, openModal } = props;
   console.log(itunes);
   console.log(itunes.image);
   return (
@@ -15,10 +17,14 @@ const ShowDetails = props => {
         </div>
         <div className="podcast-show-details-info">
           <div className="podcast-show-description">{description}</div>
+          <button onClick={() => openModal(description)}>Add To List</button>
         </div>
       </div>
     </div>
   );
 };
 
-export default ShowDetails;
+export default connect(
+  null,
+  podcastDetailsActions
+)(ShowDetails);
