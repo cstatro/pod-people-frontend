@@ -18,8 +18,11 @@ const ListShowPage = props => {
   return (
     <div className="list-show page">
       <div className="list-show-div">
-        <h1>{list.name}</h1>
+        <div className="list-show-title">
+          <h1>{list.name}</h1>
+        </div>
         <p>{list.description}</p>
+        <h2>yo</h2>
       </div>
     </div>
   );

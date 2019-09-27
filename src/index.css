@@ -50,7 +50,7 @@ html {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(128, 128, 128, 0.445);
+  background: rgba(128, 128, 128, 0.596);
   z-index: 1;
 }
 .modal {
@@ -64,6 +64,10 @@ html {
   z-index: 2;
   box-shadow: 2px 2px 2px 2px rgb(54, 52, 52);
   border-radius: 2em;
+}
+.episode-image {
+  width: 5em;
+  height: auto;
 }
 /* Main Area Styling */
 .main-area {
@@ -107,10 +111,14 @@ html {
   margin-top: 3em;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
+
   border-radius: 3%;
   box-shadow: 1px 1px 2px 2px grey;
   padding: 1em;
+}
+.searchbar {
+  width: 100%;
 }
 .search-text {
   height: 30px;
@@ -277,6 +285,10 @@ html {
   flex-direction: column;
   justify-content: center;
 }
+.list-manager > h1 {
+  background: radial-gradient(rgb(107, 106, 106), rgb(200, 196, 196));
+  margin: 0;
+}
 .current-user-lists {
   height: 75%;
   width: 95%;
@@ -289,6 +301,7 @@ html {
   justify-content: space-evenly;
   align-items: flex-start;
 }
+
 .modal-image {
   width: 5em;
   height: auto;
@@ -300,7 +313,45 @@ html {
   min-width: 100%;
   min-height: 35%;
   height: 40%;
-  padding: 0.5em;
+  /* padding: 0.5em; */
   overflow: scroll;
   border-radius: 3%;
+  display: grid;
+  grid-template-rows: 20% 80%;
+}
+.dash-label {
+  text-align: center;
+  font-size: 2.5em;
+  background: radial-gradient(rgb(107, 106, 106), rgb(200, 196, 196));
+  height: 100%;
+  margin: 0;
+  border-bottom: 2px solid black;
+}
+/* List Show Page */
+.list-show {
+  justify-content: center;
+  align-items: center;
+}
+.list-show-div {
+  width: 60%;
+  height: 95%;
+  border: 1px solid black;
+  border-radius: 3%;
+  box-shadow: 1px 2px 1px 1px grey;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 10% 80%;
+  overflow: hidden;
+}
+.list-show-title {
+  margin: 0;
+  background: radial-gradient(rgb(107, 106, 106), rgb(200, 196, 196));
+  align-self: stretch;
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+}
+.list-show-title > h1 {
+  margin: 0;
+  font-size: 2.5em;
 }

@@ -15,7 +15,7 @@ const HotLists = props => {
 
   return (
     <div className="hot-lists">
-      <h1>Hot Lists</h1>
+      <h2 className="dash-label">Hot Lists</h2>
       <ul>
         {hotLists
           .filter(l => l.user_id != user.id)

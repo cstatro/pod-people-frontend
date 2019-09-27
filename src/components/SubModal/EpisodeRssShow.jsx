@@ -5,15 +5,7 @@ import { connect } from "react-redux";
 import { modalActions } from "../../redux/actions/dispatchActions/ModalActions";
 
 const EpisodeRssShow = props => {
-  const {
-    closeModal,
-    title,
-    itunes,
-    refreshUser,
-    user,
-    enclosure,
-    objectType
-  } = props;
+  const { closeModal, title, itunes, user, enclosure, podcast } = props;
   const [list_id, setList] = useState(null);
   const handleChange = e => {
     setList(parseInt(e.target.value));
@@ -51,6 +43,7 @@ const EpisodeRssShow = props => {
   return (
     <>
       <h2>{title}</h2>
+      <img className="episode-image" src={podcast.image_url} alt="" />
       <p>{itunes.summary}</p>
       {!!user.lists ? (
         <>

@@ -8,10 +8,12 @@ const ListsFollowed = props => {
   console.log(lists);
   return (
     <div className="lists-followed">
-      <h2>Followed Lists</h2>
-      {lists.map(l => (
-        <ListShowRow showFollow={false} {...l} />
-      ))}
+      <h2 className="dash-label">Followed Lists</h2>
+      <div className="mini-dash-rows">
+        {lists.map(l => (
+          <ListShowRow showFollow={false} {...l} />
+        ))}
+      </div>
     </div>
   );
 };
