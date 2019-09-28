@@ -390,3 +390,8 @@ html {
   width: auto;
   justify-self: center;
 }
+.list-episode-image-row {
+  height: 100%;
+  width: auto;
+  justify-self: center;
+}

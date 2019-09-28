@@ -9,7 +9,6 @@ const EpisodeRssShow = props => {
   const [list_id, setList] = useState(null);
   const handleChange = e => {
     setList(parseInt(e.target.value));
-    console.log(e.target.value);
   };
   const handleButton = () => {
     // const config = postConfig({ list_id, user_id: user.id });
@@ -20,7 +19,7 @@ const EpisodeRssShow = props => {
         const episode = {
           podcast_id: json.id,
           title: title,
-          image_url: itunes.image_url,
+          image_url: itunes.image,
           audio_link: enclosure.url,
           run_time: itunes.duration
         };
@@ -28,7 +27,7 @@ const EpisodeRssShow = props => {
         fetch("http://localhost:3000/episodes", episodeConfig)
           .then(r => r.json())
           .then(json => {
-            console.log(json);
+            console.log("Whats going on", json);
             const episodeJoin = { list_id, episode_id: json.id };
             const episodeJoinConfig = postConfig(episodeJoin);
             fetch(
