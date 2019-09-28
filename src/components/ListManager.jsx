@@ -6,15 +6,20 @@ const ListManager = props => {
   const [viewForm, setViewForm] = useState(false);
   return (
     <div className="list-manager">
-      {viewForm ? (
-        <NewListForm setViewForm={setViewForm} />
-      ) : (
-        <>
-          <h1>List Manager</h1>
-          <button onClick={() => setViewForm(true)}>New List</button>
-          <CurrentUserLists />
-        </>
-      )}
+      <div className="list-manager-div">
+        {viewForm ? (
+          <>
+            <h1>List Manager</h1>
+            <NewListForm setViewForm={setViewForm} />
+          </>
+        ) : (
+          <>
+            <h1>List Manager</h1>
+            <button onClick={() => setViewForm(true)}>New List</button>
+            <CurrentUserLists />
+          </>
+        )}
+      </div>
     </div>
   );
 };
