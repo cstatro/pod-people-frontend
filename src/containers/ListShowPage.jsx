@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import ListShowPageEpisodeRow from "../components/ListShowPageEpisodeRow";
+import ListShowPagePodcastRow from "../components/ListShowPagePodcastRow";
 const ListShowPage = props => {
   const [list, setList] = useState({
     name: null,
@@ -27,7 +28,11 @@ const ListShowPage = props => {
           <div className="list-section-head">
             <h2>Podcasts</h2>
           </div>
-          <div className="list-row-container"></div>
+          <div className="list-row-container">
+            {podcasts.map(p => (
+              <ListShowPagePodcastRow {...p} />
+            ))}
+          </div>
           <div className="list-section-head">
             <h2>Episodes</h2>
           </div>

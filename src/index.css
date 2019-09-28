@@ -373,7 +373,8 @@ html {
 .list-row-container {
   overflow: scroll;
 }
-.list-show-page-episode-row {
+.list-show-page-episode-row,
+.list-show-page-podcast {
   height: 4em;
   border: 1px solid black;
   display: grid;
@@ -383,4 +384,9 @@ html {
 }
 .list-show-page-episode-row > h3 {
   font-size: 1em;
+}
+.list-show-page-podcast > img {
+  height: 100%;
+  width: auto;
+  justify-self: center;
 }
