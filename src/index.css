@@ -348,10 +348,39 @@ html {
   background: radial-gradient(rgb(107, 106, 106), rgb(200, 196, 196));
   align-self: stretch;
   display: flex;
-  border: 1px solid black;
+  border-bottom: 2px solid black;
   justify-content: center;
 }
 .list-show-title > h1 {
   margin: 0;
   font-size: 2.5em;
+}
+.list-show-display-area {
+  align-self: stretch;
+  background: greenyellow;
+
+  display: grid;
+  grid-template-rows: 10% 40% 10% 40%;
+  grid-template-columns: 100%;
+}
+.list-section-head {
+  align-self: stretch;
+  background: radial-gradient(rgb(107, 106, 106), rgb(200, 196, 196));
+}
+.list-section-head > h2 {
+  margin: 0;
+}
+.list-row-container {
+  overflow: scroll;
+}
+.list-show-page-episode-row {
+  height: 4em;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 20% 40% 20% 20%;
+  grid-template-rows: 100%;
+  overflow: hidden;
+}
+.list-show-page-episode-row > h3 {
+  font-size: 1em;
 }

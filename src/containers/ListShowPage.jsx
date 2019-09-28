@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import ListShowPageEpisodeRow from "../components/ListShowPageEpisodeRow";
 const ListShowPage = props => {
   const [list, setList] = useState({
     name: null,
@@ -22,7 +23,20 @@ const ListShowPage = props => {
           <h1>{list.name}</h1>
         </div>
         <p>{list.description}</p>
-        <h2>yo</h2>
+        <div className="list-show-display-area">
+          <div className="list-section-head">
+            <h2>Podcasts</h2>
+          </div>
+          <div className="list-row-container"></div>
+          <div className="list-section-head">
+            <h2>Episodes</h2>
+          </div>
+          <div className="list-row-container">
+            {episodes.map(e => (
+              <ListShowPageEpisodeRow key={e.id} {...e} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
