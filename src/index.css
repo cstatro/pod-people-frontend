@@ -104,6 +104,10 @@ html {
 }
 
 /* Browse Page Styling */
+.browser {
+  justify-content: space-evenly;
+  align-items: center;
+}
 .list-search-box {
   height: 85%;
   width: 40%;
@@ -111,6 +115,12 @@ html {
   border-radius: 3%;
   box-shadow: 1px 1px 2px 2px grey;
   padding: 1em;
+  display: grid;
+  grid-template-rows: 10% 90%;
+  grid-template-columns: 100%;
+}
+.list-results {
+  overflow: scroll;
 }
 .search-column {
   height: 85%;
