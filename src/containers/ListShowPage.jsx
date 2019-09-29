@@ -8,9 +8,13 @@ const ListShowPage = props => {
     description: null,
     podcasts: [],
     episodes: [],
-    followers: []
+    followers: [],
+    buzzword_generate: [],
+    user: { name: null, id: null }
   });
-  const { podcasts, episodes } = list;
+  const { podcasts, episodes, followers, buzzword_generate, user } = list;
+  const { userId } = props;
+  const followerStat = `Total Followers:  ${followers.length}`;
 
   useEffect(() => {
     fetch(`http://localhost:3000/lists/${props.paramId}`)
@@ -23,7 +27,21 @@ const ListShowPage = props => {
         <div className="list-show-title">
           <h1>{list.name}</h1>
         </div>
-        <p>{list.description}</p>
+        <div className="list-page-details">
+          <p className="list-description">{list.description}</p>
+          <div className="top-list-details">
+            <h4 className="list-stat">{user.name}</h4>
+            <h4 className="list-stat">{followerStat}</h4>
+          </div>
+          <div className="bottom-list-details">
+            <div className="buzzwords">
+              {buzzword_generate.map(s => (
+                <h5 className="buzzword list-show-buzz">{s}</h5>
+              ))}
+            </div>
+            {userId === user.id ? <h4>Edit Button</h4> : <h4>Follow Button</h4>}
+          </div>
+        </div>
         <div className="list-show-display-area">
           <div className="list-section-head">
             <h2>Podcasts</h2>

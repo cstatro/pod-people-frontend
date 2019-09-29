@@ -16,13 +16,13 @@ const HotLists = props => {
   return (
     <div className="hot-lists">
       <h2 className="dash-label">Hot Lists</h2>
-      <ul>
+      <div className="hot-list-content">
         {hotLists
           .filter(l => l.user_id != user.id)
           .map(l => (
             <ListShowRow loggedInId={user.id} {...l} />
           ))}
-      </ul>
+      </div>
     </div>
   );
 };

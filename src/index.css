@@ -365,10 +365,30 @@ html {
   min-height: 35%;
   height: 40%;
   /* padding: 0.5em; */
-  overflow: scroll;
+  overflow: hidden;
   border-radius: 3%;
   display: grid;
   grid-template-rows: 20% 80%;
+}
+.hot-list-content {
+  overflow: scroll;
+  height: 95%;
+}
+.mini-list-show-row {
+  display: grid;
+  height: 3em;
+  grid-template-columns: 60% 20% 20%;
+}
+.mini-dash-button {
+  height: 3em;
+  width: 7em;
+  font-size: 0.8;
+  align-self: center;
+}
+.link-button {
+  height: fit-content;
+  width: fit-content;
+  align-self: center;
 }
 .dash-label {
   text-align: center;
@@ -391,7 +411,7 @@ html {
   box-shadow: 1px 2px 1px 1px grey;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 10% 10% 80%;
+  grid-template-rows: 10% 20% 70%;
   overflow: hidden;
 }
 .list-show-title {
@@ -406,13 +426,49 @@ html {
   margin: 0;
   font-size: 2.5em;
 }
+.list-page-details {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+.list-description {
+  margin: 0;
+  grid-column: 1/2;
+  grid-row: 1/3;
+  align-self: center;
+  justify-self: center;
+  overflow: scroll;
+  background: rgb(175, 168, 168);
+  border: 2px solid black;
+}
+.top-list-details {
+  grid-column: 2/3;
+  grid-row: 1/2;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.bottom-list-details {
+  grid-column: 2/3;
+  grid-row: 2/3;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.list-show-details {
+  font-size: 0.6em;
+}
 .list-show-display-area {
   align-self: stretch;
-  background: greenyellow;
+  /* background: greenyellow; */
 
   display: grid;
   grid-template-rows: 10% 40% 10% 40%;
   grid-template-columns: 100%;
+}
+.list-stat {
+  margin: 0;
 }
 .list-section-head {
   align-self: stretch;
@@ -441,6 +497,7 @@ html {
   width: auto;
   justify-self: center;
 }
+
 .list-episode-image-row {
   height: 100%;
   width: auto;

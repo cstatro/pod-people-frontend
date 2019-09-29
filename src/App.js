@@ -31,7 +31,12 @@ function App(props) {
           <Route path={"/browse"} render={() => <Browse />} />
           <Route
             path={"/list/:id"}
-            render={props => <ListShowPage paramId={props.match.params.id} />}
+            render={props => (
+              <ListShowPage
+                userId={loggedIn.id}
+                paramId={props.match.params.id}
+              />
+            )}
           />
           <Route path={"/lists"} render={() => <Lists />} />
           <Route
