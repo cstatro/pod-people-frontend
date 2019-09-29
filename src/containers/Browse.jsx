@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import SearchColumn from "../components/SearchColumn";
+import ListSearch from "../components/ListSearch";
 
 class Browse extends Component {
-  state = {};
   render() {
     return (
       <div className="browser page">
-        <h1>Browsing page</h1>
+        <ListSearch />
         <SearchColumn />
       </div>
     );
