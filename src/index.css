@@ -299,10 +299,51 @@ html {
   font-size: 2.5em;
   border-bottom: 2px solid black;
 }
+.new-list-button {
+  width: 10%;
+  height: 2em;
+  margin-left: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  background: rgb(230, 245, 208);
+  box-shadow: 2px 2px 2px 2px black;
+}
+.new-list-button:active {
+  box-shadow: 1px 1px 1px 1px black;
+  outline: none;
+}
+.list-manager-row {
+  height: 5em;
+  border-bottom: 1px solid black;
+  display: grid;
+  grid-template-columns: 30% 50% 20%;
+}
+.list-manager-row-title {
+  margin-left: 5px;
+}
+.buzzwords {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.buzzword {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 3px;
+  background: rgb(212, 192, 155);
+  border: solid black 2px;
+  max-height: 25%;
+  padding: 3px;
+  border-radius: 5%;
+}
 .current-user-lists {
-  height: 75%;
-  width: 95%;
+  height: 80%;
+  width: 100%;
   border: 1px solid black;
+  overflow: scroll;
 }
 .list-mini-dashboards {
   display: flex;

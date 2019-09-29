@@ -15,7 +15,12 @@ const ListManager = props => {
         ) : (
           <>
             <h1>List Manager</h1>
-            <button onClick={() => setViewForm(true)}>New List</button>
+            <button
+              className="new-list-button"
+              onClick={() => setViewForm(true)}
+            >
+              New List
+            </button>
             <CurrentUserLists />
           </>
         )}
