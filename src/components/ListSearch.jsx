@@ -36,7 +36,7 @@ const ListSearch = () => {
     <div className="list-search-box">
       <div className="list-search-top">
         <input onChange={handleChange} name="search" type="text" />
-        <button>search</button>
+        <button onClick={() => setFiltered(true)}>search</button>
       </div>
       <div className="list-results">
         {filtered
