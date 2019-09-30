@@ -3,14 +3,14 @@ import { postConfig } from "../../api/config";
 import { useState } from "react";
 const PodCastRssShow = props => {
   const { name, image_url } = props.podcast;
-  const { user } = props;
+  const { user, description } = props;
   const [list_id, setListId] = useState(null);
 
   const handleChange = e => {
     setListId(parseInt(e.target.value));
   };
   const handleButton = () => {
-    const podcastConfig = postConfig(props.podcast);
+    const podcastConfig = postConfig({ ...props.podcast, description });
     fetch("http://localhost:3000/podcasts", podcastConfig)
       .then(r => r.json())
       .then(json => {
