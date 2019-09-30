@@ -421,6 +421,11 @@ html {
   align-self: center;
   box-shadow: 1.5px 1.5px 1.5px 1.5px grey;
 }
+.mini-button-link {
+  height: fit-content;
+  width: fit-content;
+  align-self: center;
+}
 .mini-delete {
   background: rgb(255, 97, 97);
 }

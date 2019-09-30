@@ -13,7 +13,7 @@ const CurrentUserListRow = props => {
         ))}
       </div>
       <div className="list-manager-row-buttons">
-        <Link to={`/list/${id}`}>
+        <Link className="mini-button-link" to={`/list/${id}`}>
           <button className="mini-dash-button mini-view">view</button>
         </Link>
         {editMode ? (
