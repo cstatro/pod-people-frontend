@@ -3,11 +3,11 @@ import { connect } from "react-redux";
 import { currentUserListState } from "../redux/actions/mapStateToProps/CurrentUserListState";
 import { currentUserListActions } from "../redux/actions/dispatchActions/currentUserListsActions";
 import { useEffect, useState } from "react";
-import MiniListShowEdit from "./MiniListShowEdit";
+// import MiniListShowEdit from "./MiniListShowEdit"; may need to deprecate this component
 import CurrentUserListRow from "./CurrentUserListRow";
 const CurrentUserLists = props => {
-  const { fetchUser, user } = props;
-  const [editList, setEditList] = useState(null);
+  const { fetchUser, user, editMode } = props;
+  // const [editList, setEditList] = useState(null);
 
   useEffect(() => {
     fetchUser(user.id);
@@ -15,13 +15,11 @@ const CurrentUserLists = props => {
 
   return (
     <div className="current-user-lists">
-      {!!user.lists && !!!editList
+      {!!user.lists
         ? user.lists.map(l => (
-            <CurrentUserListRow setEditList={setEditList} list={l} />
+            <CurrentUserListRow editMode={editMode} list={l} />
           ))
-        : // ? user.lists.map(l => <h2 onClick={() => setEditList(l)}>{l.name}</h2>)
-          null}
-      {!!editList ? <MiniListShowEdit {...editList} /> : null}
+        : null}
     </div>
   );
 };
