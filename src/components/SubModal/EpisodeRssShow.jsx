@@ -5,14 +5,22 @@ import { connect } from "react-redux";
 import { modalActions } from "../../redux/actions/dispatchActions/ModalActions";
 
 const EpisodeRssShow = props => {
-  const { closeModal, title, itunes, user, enclosure, podcast } = props;
+  const {
+    closeModal,
+    title,
+    itunes,
+    user,
+    enclosure,
+    podcast,
+    description
+  } = props;
   const [list_id, setList] = useState(null);
   const handleChange = e => {
     setList(parseInt(e.target.value));
   };
   const handleButton = () => {
     // const config = postConfig({ list_id, user_id: user.id });
-    const podcastConfig = postConfig(props.podcast);
+    const podcastConfig = postConfig({ ...props.podcast, description });
     fetch("http://localhost:3000/podcasts", podcastConfig)
       .then(r => r.json())
       .then(json => {
@@ -21,7 +29,8 @@ const EpisodeRssShow = props => {
           title: title,
           image_url: itunes.image,
           audio_link: enclosure.url,
-          run_time: itunes.duration
+          run_time: itunes.duration,
+          description: itunes.summary
         };
         const episodeConfig = postConfig(episode);
         fetch("http://localhost:3000/episodes", episodeConfig)

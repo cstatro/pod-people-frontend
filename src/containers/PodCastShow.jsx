@@ -43,7 +43,11 @@ const PodCastShow = props => {
     <div className="podcast-show page">
       {!!rssFeed ? (
         <>
-          <ShowDetails {...rssFeed} /> <EpisodeList items={rssFeed.items} />
+          <ShowDetails {...rssFeed} />{" "}
+          <EpisodeList
+            description={rssFeed.description}
+            items={rssFeed.items}
+          />
         </>
       ) : (
         <Loading />
