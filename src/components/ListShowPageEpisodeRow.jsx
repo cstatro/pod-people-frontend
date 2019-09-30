@@ -1,7 +1,10 @@
 import React from "react";
 import bottomText from "../image/bottom_text.png";
+import { connect } from "react-redux";
+import { ListShowPageEpisodeRowActions } from "../redux/actions/dispatchActions/ListShowPageEpisodeRow";
 const ListShowPageEpisodeRow = props => {
-  const { title, run_time, image_url } = props;
+  const { title, run_time, image_url, viewModal } = props;
+
   return (
     <div className="list-show-page-episode-row">
       {!!image_url ? (
@@ -15,9 +18,12 @@ const ListShowPageEpisodeRow = props => {
       )}
       <h4>{title}</h4>
       <h3>{run_time}</h3>
-      <button>what up</button>
+      <button onClick={() => viewModal(props)}>View</button>
     </div>
   );
 };
 
-export default ListShowPageEpisodeRow;
+export default connect(
+  null,
+  ListShowPageEpisodeRowActions
+)(ListShowPageEpisodeRow);

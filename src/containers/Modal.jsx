@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { modalActions } from "../redux/actions/dispatchActions/ModalActions";
-import { useEffect, useState } from "react";
-import { postConfig } from "../api/config";
+import { useEffect } from "react";
 import EpisodeRssShow from "../components/SubModal/EpisodeRssShow";
 import PodCastRssShow from "../components/SubModal/PodCastRssShow";
+import EpisodeDataShow from "../components/SubModal/EpisodeDataShow";
 const Modal = props => {
   const { closeModal, refreshUser, user, objectType } = props;
 
@@ -34,6 +34,8 @@ const Modal = props => {
             user={user}
           />
         );
+      case "episodeData":
+        return <EpisodeDataShow lists={user.lists} {...props.displayObj} />;
       default:
         return <h1> There was a problem loading this</h1>;
     }
