@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import EpisodeRssShow from "../components/SubModal/EpisodeRssShow";
 import PodCastRssShow from "../components/SubModal/PodCastRssShow";
 import EpisodeDataShow from "../components/SubModal/EpisodeDataShow";
+import PodcastDataShow from "../components/SubModal/PodcastDataShow";
 const Modal = props => {
   const { closeModal, refreshUser, user, objectType } = props;
 
@@ -36,6 +37,8 @@ const Modal = props => {
         );
       case "episodeData":
         return <EpisodeDataShow lists={user.lists} {...props.displayObj} />;
+      case "podcastData":
+        return <PodcastDataShow lists={user.lists} {...props.displayObj} />;
       default:
         return <h1> There was a problem loading this</h1>;
     }
