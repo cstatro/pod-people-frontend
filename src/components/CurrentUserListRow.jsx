@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CurrentUserListRow = props => {
-  const { name, buzzword_generate } = props.list;
+  const { name, buzzword_generate, id } = props.list;
   const { editMode } = props;
   return (
     <div className="list-manager-row">
@@ -12,7 +13,9 @@ const CurrentUserListRow = props => {
         ))}
       </div>
       <div className="list-manager-row-buttons">
-        <button className="mini-dash-button mini-view">view</button>
+        <Link to={`/list/${id}`}>
+          <button className="mini-dash-button mini-view">view</button>
+        </Link>
         {editMode ? (
           <button className="mini-dash-button mini-delete">delete</button>
         ) : null}
