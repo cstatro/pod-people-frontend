@@ -12,8 +12,10 @@ const CurrentUserListRow = props => {
         ))}
       </div>
       <div className="list-manager-row-buttons">
-        <button>view</button>
-        {editMode ? <button>delete</button> : null}
+        <button className="mini-dash-button mini-view">view</button>
+        {editMode ? (
+          <button className="mini-dash-button mini-delete">delete</button>
+        ) : null}
       </div>
     </div>
   );

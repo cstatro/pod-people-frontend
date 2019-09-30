@@ -324,7 +324,17 @@ html {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   font-size: 1em;
-  background: rgb(230, 245, 208);
+  background: rgb(209, 245, 155);
+  box-shadow: 2px 2px 2px 2px black;
+}
+.edit-list-button {
+  width: 10%;
+  height: 2em;
+  margin-left: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  background: rgb(227, 238, 124);
   box-shadow: 2px 2px 2px 2px black;
 }
 .new-list-button:active {
@@ -357,6 +367,13 @@ html {
   padding: 3px;
   border-radius: 5%;
 }
+.list-manager-row-buttons {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .current-user-lists {
   height: 80%;
   width: 100%;
@@ -402,6 +419,16 @@ html {
   width: 7em;
   font-size: 0.8;
   align-self: center;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px grey;
+}
+.mini-delete {
+  background: rgb(255, 97, 97);
+}
+.mini-view {
+  background: rgb(144, 221, 245);
+}
+.mini-dash-button:active {
+  box-shadow: 0.5px 0.5px 0.5px 0.5px grey;
 }
 .link-button {
   height: fit-content;

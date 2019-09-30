@@ -24,7 +24,7 @@ const ListShowRow = props => {
         </button>
       ) : null}
       <Link className="link-button" to={`/list/${props.id}`}>
-        <button className="mini-dash-button">View</button>
+        <button className="mini-dash-button mini-view">View</button>
       </Link>
     </div>
   );
