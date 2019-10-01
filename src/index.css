@@ -537,6 +537,23 @@ html {
 .list-row-container {
   overflow: scroll;
 }
+.list-page-details-button {
+  height: 70%;
+  width: 60%;
+  box-shadow: 2px 2px 2px 2px grey;
+}
+.list-page-details-button:active {
+  box-shadow: 1px 1px 1px 1px grey;
+}
+.list-rows-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.list-show-row-button {
+  height: 65%;
+  width: 45%;
+}
 .list-show-page-episode-row,
 .list-show-page-podcast {
   height: 4em;

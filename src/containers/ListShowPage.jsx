@@ -12,15 +12,18 @@ const ListShowPage = props => {
     buzzword_generate: [],
     user: { name: null, id: null }
   });
-  const { podcasts, episodes, followers, buzzword_generate, user } = list;
-  const { userId } = props;
-  const followerStat = `Total Followers:  ${followers.length}`;
+  const [editMode, setEditMode] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:3000/lists/${props.paramId}`)
       .then(r => r.json())
       .then(json => setList(json));
   }, []);
+
+  const { podcasts, episodes, followers, buzzword_generate, user } = list;
+  const { userId } = props;
+  const followerStat = `Total Followers:  ${followers.length}`;
+
   return (
     <div className="list-show page">
       <div className="list-show-div">
@@ -39,7 +42,16 @@ const ListShowPage = props => {
                 <h5 className="buzzword list-show-buzz">{s}</h5>
               ))}
             </div>
-            {userId === user.id ? <h4>Edit Button</h4> : <h4>Follow Button</h4>}
+            {userId === user.id ? (
+              <button
+                className="list-page-details-button"
+                onClick={() => setEditMode(!editMode)}
+              >
+                Edit Button
+              </button>
+            ) : (
+              <button className="list-page-details-button">Follow</button>
+            )}
           </div>
         </div>
         <div className="list-show-display-area">
@@ -48,7 +60,7 @@ const ListShowPage = props => {
           </div>
           <div className="list-row-container">
             {podcasts.map(p => (
-              <ListShowPagePodcastRow {...p} />
+              <ListShowPagePodcastRow editMode={editMode} {...p} />
             ))}
           </div>
           <div className="list-section-head">
@@ -56,7 +68,7 @@ const ListShowPage = props => {
           </div>
           <div className="list-row-container">
             {episodes.map(e => (
-              <ListShowPageEpisodeRow key={e.id} {...e} />
+              <ListShowPageEpisodeRow editMode={editMode} key={e.id} {...e} />
             ))}
           </div>
         </div>
