@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 // import MiniListShowEdit from "./MiniListShowEdit"; may need to deprecate this component
 import CurrentUserListRow from "./CurrentUserListRow";
 const CurrentUserLists = props => {
-  const { fetchUser, user, editMode } = props;
+  const { fetchUser, user, editMode, removeList } = props;
   // const [editList, setEditList] = useState(null);
 
   useEffect(() => {
@@ -17,7 +17,12 @@ const CurrentUserLists = props => {
     <div className="current-user-lists">
       {!!user.lists
         ? user.lists.map(l => (
-            <CurrentUserListRow editMode={editMode} list={l} />
+            <CurrentUserListRow
+              user={user}
+              removeList={removeList}
+              editMode={editMode}
+              list={l}
+            />
           ))
         : null}
     </div>

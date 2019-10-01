@@ -414,6 +414,9 @@ html {
   height: 3em;
   grid-template-columns: 60% 20% 20%;
 }
+.mini-list-name {
+  padding-left: 0.5em;
+}
 .mini-dash-button {
   height: 3em;
   width: 7em;

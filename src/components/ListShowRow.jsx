@@ -17,7 +17,7 @@ const ListShowRow = props => {
 
   return (
     <div className="mini-list-show-row">
-      {name}
+      <p className="mini-list-name">{name}</p>
       {showFollow ? (
         <button className="mini-dash-button" onClick={followList}>
           follow

@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { deleteConfig } from "../api/config";
 
 const CurrentUserListRow = props => {
   const { name, buzzword_generate, id } = props.list;
-  const { editMode } = props;
+  const { editMode, removeList, user } = props;
+
+  const handleDelete = () => {
+    fetch(`http://localhost:3000/lists/${id}`, deleteConfig());
+    removeList(id, user);
+  };
+
   return (
     <div className="list-manager-row">
       <h2 className="list-manager-row-title">{name}</h2>
@@ -17,7 +24,12 @@ const CurrentUserListRow = props => {
           <button className="mini-dash-button mini-view">view</button>
         </Link>
         {editMode ? (
-          <button className="mini-dash-button mini-delete">delete</button>
+          <button
+            onClick={handleDelete}
+            className="mini-dash-button mini-delete"
+          >
+            delete
+          </button>
         ) : null}
       </div>
     </div>
