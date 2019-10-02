@@ -4,6 +4,7 @@ import ListShowPageEpisodeRow from "../components/ListShowPageEpisodeRow";
 import ListShowPagePodcastRow from "../components/ListShowPagePodcastRow";
 const ListShowPage = props => {
   const [list, setList] = useState({
+    id: null,
     name: null,
     description: null,
     podcasts: [],
@@ -21,8 +22,8 @@ const ListShowPage = props => {
   }, []);
 
   const { podcasts, episodes, followers, buzzword_generate, user } = list;
-  const { userId } = props;
-  const followerStat = `Total Followers:  ${followers.length}`;
+  const { userId, paramId } = props;
+  // const followerStat = `Total Followers:  ${followers.length}`;
 
   return (
     <div className="list-show page">
@@ -34,7 +35,11 @@ const ListShowPage = props => {
           <p className="list-description">{list.description}</p>
           <div className="top-list-details">
             <h4 className="list-stat">{user.name}</h4>
-            <h4 className="list-stat">{followerStat}</h4>
+            <h4 className="list-stat">
+              {!!followers
+                ? `Total Followers:  ${followers.length}`
+                : "loading"}
+            </h4>
           </div>
           <div className="bottom-list-details">
             <div className="buzzwords">
@@ -60,7 +65,14 @@ const ListShowPage = props => {
           </div>
           <div className="list-row-container">
             {podcasts.map(p => (
-              <ListShowPagePodcastRow editMode={editMode} {...p} />
+              <ListShowPagePodcastRow
+                key={p.id}
+                list_id={paramId}
+                editMode={editMode}
+                {...p}
+                list={list}
+                setList={setList}
+              />
             ))}
           </div>
           <div className="list-section-head">
@@ -68,7 +80,13 @@ const ListShowPage = props => {
           </div>
           <div className="list-row-container">
             {episodes.map(e => (
-              <ListShowPageEpisodeRow editMode={editMode} key={e.id} {...e} />
+              <ListShowPageEpisodeRow
+                list={list}
+                setList={setList}
+                editMode={editMode}
+                key={e.id}
+                {...e}
+              />
             ))}
           </div>
         </div>
