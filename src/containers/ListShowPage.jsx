@@ -83,6 +83,7 @@ const ListShowPage = props => {
               <ListShowPageEpisodeRow
                 list={list}
                 setList={setList}
+                list_id={paramId}
                 editMode={editMode}
                 key={e.id}
                 {...e}

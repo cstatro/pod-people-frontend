@@ -22,10 +22,10 @@ const ListShowPageEpisodeRow = props => {
       `http://localhost:3000/episode_list_joins/${list_id}/${id}`,
       deleteConfig()
     ).then(r => {
-      const podcasts = list.episodes
+      const episodes = list.episodes
         .map(e => (e.id === id ? null : e))
         .filter(e => !!e);
-      const newList = { ...list, podcasts };
+      const newList = { ...list, episodes };
       setList(newList);
     });
   };
