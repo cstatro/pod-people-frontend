@@ -43,10 +43,18 @@ const ListShowPageEpisodeRow = props => {
       )}
       <h4>{cutOffOnListShowPage(title)}</h4>
       <h3>{run_time}</h3>
-      <div>
-        <button onClick={() => viewModal(props)}>View</button>
+      <div className="list-rows-buttons">
+        <button
+          className="list-show-row-button"
+          onClick={() => viewModal(props)}
+        >
+          View
+        </button>
         {editMode ? (
-          <button className="list-show-row-button" onClick={handleDelete}>
+          <button
+            className="list-show-row-button mini-delete"
+            onClick={handleDelete}
+          >
             Remove
           </button>
         ) : null}

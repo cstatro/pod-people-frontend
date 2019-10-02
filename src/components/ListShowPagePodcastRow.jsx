@@ -38,10 +38,13 @@ const ListShowPagePodcastRow = props => {
           className="list-show-row-button"
           onClick={() => openModal(props)}
         >
-          view
+          View
         </button>
         {editMode ? (
-          <button className="list-show-row-button" onClick={handleDelete}>
+          <button
+            className="list-show-row-button mini-delete"
+            onClick={handleDelete}
+          >
             Remove
           </button>
         ) : null}
