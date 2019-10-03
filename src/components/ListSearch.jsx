@@ -35,7 +35,13 @@ const ListSearch = () => {
   return (
     <div className="list-search-box">
       <div className="list-search-top">
-        <input onChange={handleChange} name="search" type="text" />
+        <input
+          placeholder="Search Lists"
+          onChange={handleChange}
+          name="search"
+          type="text"
+          className="search-list-input"
+        />
         <button onClick={() => setFiltered(true)}>search</button>
       </div>
       <div className="list-results">

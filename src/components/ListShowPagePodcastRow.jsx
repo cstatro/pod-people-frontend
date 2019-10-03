@@ -35,7 +35,7 @@ const ListShowPagePodcastRow = props => {
       <h3>{genre}</h3>
       <div className="list-rows-buttons">
         <button
-          className="list-show-row-button"
+          className="list-show-row-button view-button"
           onClick={() => openModal(props)}
         >
           View

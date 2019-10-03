@@ -49,13 +49,15 @@ const ListShowPage = props => {
             </div>
             {userId === user.id ? (
               <button
-                className="list-page-details-button"
+                className="list-page-details-button details-edit"
                 onClick={() => setEditMode(!editMode)}
               >
                 Edit Button
               </button>
             ) : (
-              <button className="list-page-details-button">Follow</button>
+              <button className="list-page-details-button details-follow">
+                Follow
+              </button>
             )}
           </div>
         </div>

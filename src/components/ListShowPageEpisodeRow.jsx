@@ -45,7 +45,7 @@ const ListShowPageEpisodeRow = props => {
       <h3>{run_time}</h3>
       <div className="list-rows-buttons">
         <button
-          className="list-show-row-button"
+          className="list-show-row-button view-button"
           onClick={() => viewModal(props)}
         >
           View

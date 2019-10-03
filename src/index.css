@@ -64,6 +64,7 @@ html {
   z-index: 2;
   box-shadow: 2px 2px 2px 2px rgb(54, 52, 52);
   border-radius: 2em;
+  overflow: scroll;
 }
 .episode-image {
   width: 5em;
@@ -186,6 +187,10 @@ html {
 .podcast-search-result-track-count {
   grid-column: 3/4;
 }
+.search-list-input {
+  height: 50%;
+  width: 50%;
+}
 
 /* Podcast Show Page Styling */
 .podcast-show {
@@ -196,7 +201,7 @@ html {
 }
 
 .podcast-show-card {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 40%;
   width: 70%;
   margin-top: 1em;
@@ -204,11 +209,12 @@ html {
   align-items: center;
   background: #bcd0f0;
   border-radius: 1%;
+  box-shadow: 2px 2px 2px 2px black;
 }
 .podcast-show-pic {
   height: 80%;
   width: 20%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-left: 2em;
   display: flex;
   align-items: center;
@@ -216,11 +222,20 @@ html {
 .podcast-show-details {
   height: 90%;
   width: 75%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-left: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.pod-button-add {
+  height: 30%;
+  width: 30%;
+  align-self: center;
+  margin-left: 14%;
+  font-size: 1em;
+  box-shadow: 2px 2px 2px 2px;
+  background: #68d5e7;
 }
 .podcast-show-pic > img {
   width: 100%;
@@ -241,13 +256,13 @@ html {
 .podcast-show-details-info {
   width: 95%;
   height: 82%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
 }
 .podcast-show-description {
   width: 40%;
   height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   overflow: scroll;
   padding: 2px;
 }
@@ -272,6 +287,22 @@ html {
 .episode-card > img {
   height: 100%;
   width: auto;
+}
+.episode-card-button {
+  width: 92%;
+  height: 50%;
+  align-self: center;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px black;
+  border-radius: 2%;
+}
+.episode-card-button:active {
+  box-shadow: 0.5 0.5 0.5 0.5 black;
+}
+.play {
+  background: rgb(158, 158, 223);
+}
+.add {
+  background: #68d5e7;
 }
 /* Login Page */
 .login-area {
@@ -350,7 +381,7 @@ html {
 }
 .list-manager-row {
   height: 5em;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   display: grid;
   grid-template-columns: 30% 50% 20%;
 }
@@ -388,7 +419,7 @@ html {
 .current-user-lists {
   height: 80%;
   width: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   overflow: scroll;
   background: #bcd0f0;
 }
@@ -466,6 +497,9 @@ html {
   height: 100%;
   margin: 0;
   border-bottom: 2px solid black;
+}
+.mini-dash-rows {
+  overflow: scroll;
 }
 /* List Show Page */
 .list-show {
@@ -559,6 +593,12 @@ html {
   width: 60%;
   box-shadow: 2px 2px 2px 2px grey;
 }
+.details-edit {
+  background: rgb(227, 238, 124);
+}
+.details-follow {
+  background: #68d5e7;
+}
 .list-page-details-button:active {
   box-shadow: 1px 1px 1px 1px grey;
 }
@@ -570,6 +610,10 @@ html {
 .list-show-row-button {
   height: 65%;
   width: 45%;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px black;
+}
+.list-show-row-button:active {
+  box-shadow: 0.5 0.5 0.5 0.5 black;
 }
 .list-show-page-episode-row,
 .list-show-page-podcast {
@@ -593,6 +637,9 @@ html {
   height: 100%;
   width: auto;
   justify-self: center;
+}
+.view-button {
+  background: rgb(144, 221, 245);
 }
 /* Home Page */
 .user-profile {

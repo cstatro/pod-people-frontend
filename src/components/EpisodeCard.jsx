@@ -17,10 +17,18 @@ const EpisodeCard = props => {
       <img src={itunes.image} alt="" />
       <h4>{title}</h4>
       <h4>{pubDate}</h4>
-      <button onClick={() => setCurrentTrack(enclosure.url)}>
+      <button
+        className="episode-card-button play"
+        onClick={() => setCurrentTrack(enclosure.url)}
+      >
         click to play
       </button>
-      <button onClick={() => openModal(props)}>Add To List</button>
+      <button
+        className="episode-card-button add"
+        onClick={() => openModal(props)}
+      >
+        Add To List
+      </button>
     </div>
   );
 };

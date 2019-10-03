@@ -16,7 +16,12 @@ const ShowDetails = props => {
         </div>
         <div className="podcast-show-details-info">
           <div className="podcast-show-description">{description}</div>
-          <button onClick={() => openModal(description)}>Add To List</button>
+          <button
+            className="pod-button-add"
+            onClick={() => openModal(description)}
+          >
+            Add To List
+          </button>
         </div>
       </div>
     </div>
