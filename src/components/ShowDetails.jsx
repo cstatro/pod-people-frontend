@@ -4,8 +4,7 @@ import { podcastDetailsActions } from "../redux/actions/dispatchActions/podCastD
 
 const ShowDetails = props => {
   const { itunes, title, description, openModal } = props;
-  console.log(itunes);
-  console.log(itunes.image);
+
   return (
     <div className="podcast-show-card">
       <div className="podcast-show-pic">

@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import CurrentUserListRow from "./CurrentUserListRow";
 const CurrentUserLists = props => {
   const { fetchUser, user, editMode, removeList } = props;
-  // const [editList, setEditList] = useState(null);
 
   useEffect(() => {
     fetchUser(user.id);

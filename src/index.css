@@ -27,7 +27,7 @@ html {
 /* NavBar Styling */
 .nav {
   display: flex;
-  background: radial-gradient(rgb(85, 81, 81), rgb(172, 166, 166));
+  background: radial-gradient(#375c78, rgb(152, 182, 243));
   width: 100%;
   height: 10%;
   align-items: flex-end;
@@ -55,7 +55,7 @@ html {
 }
 .modal {
   position: fixed;
-  background: white;
+  background: #bcd0f0;
   padding: 0.7em;
   left: 25%;
   width: 50%;
@@ -72,12 +72,12 @@ html {
 /* Main Area Styling */
 .main-area {
   height: 90%;
-  background: rgb(202, 236, 202);
+  background: #4f94fb;
   margin: 0;
 }
 .page {
   height: 100%;
-  background: rgb(218, 233, 247);
+  background: #5297ff;
   margin: 0;
   display: flex;
 }
@@ -118,6 +118,7 @@ html {
   display: grid;
   grid-template-rows: 10% 90%;
   grid-template-columns: 100%;
+  background: #bcd0f0;
 }
 .list-results {
   overflow: scroll;
@@ -130,7 +131,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  background: #bcd0f0;
   border-radius: 3%;
   box-shadow: 1px 1px 2px 2px grey;
   padding: 1em;
@@ -191,6 +192,7 @@ html {
   align-items: center;
   /* justify-content: center; */
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .podcast-show-card {
@@ -200,6 +202,8 @@ html {
   margin-top: 1em;
   display: flex;
   align-items: center;
+  background: #bcd0f0;
+  border-radius: 1%;
 }
 .podcast-show-pic {
   height: 80%;
@@ -248,20 +252,22 @@ html {
   padding: 2px;
 }
 .episode-list {
-  height: 55%;
+  height: 53%;
   width: 70%;
   margin-top: 2px;
   border: 1px solid black;
   overflow: scroll;
   display: flex;
   flex-direction: column;
+  background: #bcd0f0;
+  box-shadow: 2px 1px 2px 1px black;
 }
 .episode-card {
   min-height: 7em;
 
   border-bottom: 1px solid black;
   display: grid;
-  grid-template-columns: 20% 50% 10% 10% 10%;
+  grid-template-columns: 20% 45% 15% 10% 10%;
 }
 .episode-card > img {
   height: 100%;
@@ -309,9 +315,10 @@ html {
   border-radius: 3%;
   overflow: hidden;
   box-shadow: 1px 2px 1px 1px grey;
+  background: #bcd0f0;
 }
 .list-manager-div > h1 {
-  background: radial-gradient(rgb(107, 106, 106), rgb(200, 196, 196));
+  background: radial-gradient(#375c78, rgb(152, 182, 243));
   margin: 0;
   text-align: center;
   font-size: 2.5em;
@@ -348,7 +355,11 @@ html {
   grid-template-columns: 30% 50% 20%;
 }
 .list-manager-row-title {
+  margin: 0;
   margin-left: 5px;
+  text-align: start;
+  align-self: center;
+  line-height: 100%;
 }
 .buzzwords {
   display: flex;
@@ -361,7 +372,7 @@ html {
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 3px;
-  background: rgb(212, 192, 155);
+  background: #f0d8bb;
   border: solid black 2px;
   max-height: 25%;
   padding: 3px;
@@ -379,6 +390,7 @@ html {
   width: 100%;
   border: 1px solid black;
   overflow: scroll;
+  background: #bcd0f0;
 }
 .list-mini-dashboards {
   display: flex;
@@ -404,6 +416,7 @@ html {
   border-radius: 3%;
   display: grid;
   grid-template-rows: 20% 80%;
+  background: #bcd0f0;
 }
 .hot-list-content {
   overflow: scroll;
@@ -413,6 +426,9 @@ html {
   display: grid;
   height: 3em;
   grid-template-columns: 60% 20% 20%;
+}
+.follow {
+  background: #68d5e7;
 }
 .mini-list-name {
   padding-left: 0.5em;
@@ -446,7 +462,7 @@ html {
 .dash-label {
   text-align: center;
   font-size: 2.5em;
-  background: radial-gradient(rgb(107, 106, 106), rgb(200, 196, 196));
+  background: radial-gradient(#375c78, rgb(152, 182, 243));
   height: 100%;
   margin: 0;
   border-bottom: 2px solid black;
@@ -466,10 +482,11 @@ html {
   grid-template-columns: 100%;
   grid-template-rows: 10% 20% 70%;
   overflow: hidden;
+  background: #bcd0f0;
 }
 .list-show-title {
   margin: 0;
-  background: radial-gradient(rgb(107, 106, 106), rgb(200, 196, 196));
+  background: radial-gradient(#375c78, rgb(152, 182, 243));
   align-self: stretch;
   display: flex;
   border-bottom: 2px solid black;
@@ -529,7 +546,7 @@ html {
 }
 .list-section-head {
   align-self: stretch;
-  background: radial-gradient(rgb(107, 106, 106), rgb(200, 196, 196));
+  background: radial-gradient(#375c78, rgb(152, 182, 243));
 }
 .list-section-head > h2 {
   margin: 0;
@@ -583,4 +600,8 @@ html {
   border: 1px solid black;
   border-radius: 3%;
   width: 50%;
+}
+.profile-pic {
+  width: 50%;
+  height: auto;
 }

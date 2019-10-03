@@ -19,8 +19,8 @@ class SignUp extends Component {
       .then(r => r.json())
       .then(json => {
         fetchUser(json.id);
-        this.props.history.push("/home");
-      });
+      })
+      .then(r => this.props.history.push("/home"));
   };
   render() {
     return (

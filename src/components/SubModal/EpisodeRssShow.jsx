@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { postConfig } from "../../api/config";
 import { connect } from "react-redux";
 import { modalActions } from "../../redux/actions/dispatchActions/ModalActions";
+import PlayButton from "../PlayButton";
 
 const EpisodeRssShow = props => {
   const {
@@ -62,6 +63,7 @@ const EpisodeRssShow = props => {
             ))}
           </select>
           <button onClick={handleButton}>+</button>
+          <PlayButton link={enclosure.url} />
         </>
       ) : null}
     </>
