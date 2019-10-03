@@ -129,9 +129,13 @@ html {
   width: 40%;
   border: 1px solid black;
   /* margin-top: 3em; */
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
+  display: grid;
+  grid-template-rows: 10% 90%;
+  grid-template-columns: 100%;
+  /* trying thisout */
   background: #bcd0f0;
   border-radius: 3%;
   box-shadow: 1px 1px 2px 2px grey;
@@ -141,7 +145,7 @@ html {
   width: 100%;
 }
 .search-text {
-  height: 30px;
+  height: 50%;
   min-width: 50%;
   border-radius: 4%;
   font-size: 1em;
@@ -152,19 +156,21 @@ html {
   border: 1px solid black;
 }
 .search-form {
-  display: flex;
+  /* display: flex;
   justify-content: space-evenly;
   align-items: center;
-  min-width: 100%;
+  min-width: 100%; */
+  height: 100%;
+  width: 100%;
 }
 .search-bar-label {
   margin-right: 0.5em;
   align-self: flex-end;
 }
 .search-results {
-  height: 92%;
-  width: 95%;
-  border: 1px solid black;
+  height: 100%;
+  width: 100%;
+  /* border: 1px solid black; */
   overflow: scroll;
 }
 .podcast-search-result {
@@ -190,8 +196,22 @@ html {
 .search-list-input {
   height: 50%;
   width: 50%;
+  font-size: 1em;
 }
-
+.search-input {
+  margin-left: 20%;
+}
+.search-button {
+  height: 40%;
+  width: 20%;
+  margin-left: 2%;
+  font-size: 0.9em;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px black;
+  background: rgb(176, 240, 206);
+}
+.search-button:active {
+  box-shadow: 0.4px 0.4px 0.4px 0.4px black;
+}
 /* Podcast Show Page Styling */
 .podcast-show {
   align-items: center;

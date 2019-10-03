@@ -13,19 +13,26 @@ const SearchBar = props => {
   return (
     <div onSubmit={handleSubmit} className="searchbar">
       <form className="search-form">
-        {/* <h3>Search Form</h3> */}
         <input
           type="text"
-          className="search-text"
+          className="search-text search-input"
           placeholder="Search For Podcast"
         />
         {/* <input type="submit" value="" className="search-button" /> */}
-        <input
+        {/* <input
           type="image"
           src={search}
           name="submit"
           className="search-logo"
-        />
+        /> */}
+        <button
+          type="image"
+          src={search}
+          name="submit"
+          className="search-button"
+        >
+          Search
+        </button>
       </form>
     </div>
   );

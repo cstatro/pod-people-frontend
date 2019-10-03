@@ -40,9 +40,11 @@ const ListSearch = () => {
           onChange={handleChange}
           name="search"
           type="text"
-          className="search-list-input"
+          className="search-list-input search-input"
         />
-        <button onClick={() => setFiltered(true)}>search</button>
+        <button className="search-button" onClick={() => setFiltered(true)}>
+          Search
+        </button>
       </div>
       <div className="list-results">
         {filtered
