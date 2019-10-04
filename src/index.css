@@ -202,7 +202,7 @@ html {
   margin-left: 20%;
 }
 .search-button {
-  height: 40%;
+  height: 44%;
   width: 20%;
   margin-left: 2%;
   font-size: 0.9em;
@@ -512,14 +512,18 @@ html {
 }
 .dash-label {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2.3em;
   background: radial-gradient(#375c78, rgb(152, 182, 243));
   height: 100%;
   margin: 0;
   border-bottom: 2px solid black;
+  align-self: center;
 }
 .mini-dash-rows {
   overflow: scroll;
+}
+.list-manager-title {
+  align-self: center;
 }
 /* List Show Page */
 .list-show {

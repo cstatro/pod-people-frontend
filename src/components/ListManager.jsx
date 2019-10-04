@@ -10,7 +10,7 @@ const ListManager = () => {
       <div className="list-manager-div">
         {viewForm ? (
           <>
-            <h1>List Manager</h1>
+            <h1 className="list-manager-title">List Manager</h1>
             <NewListForm setViewForm={setViewForm} />
           </>
         ) : (
