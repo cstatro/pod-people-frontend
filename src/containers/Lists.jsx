@@ -4,7 +4,6 @@ import HotLists from "../components/HotLists";
 import ListsFollowed from "../components/ListsFollowed";
 
 class Lists extends Component {
-  state = {};
   render() {
     return (
       <div className="lists page">

@@ -3,19 +3,19 @@ import { postConfig } from "../api/config";
 import { loginActions } from "../redux/actions/dispatchActions/loginActions";
 import { connect } from "react-redux";
 class LoginForm extends Component {
-  state = {};
-
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
   handleSubmit = e => {
     const { setUser } = this.props;
     e.preventDefault();
-    console.log({ ...this.state });
     const config = postConfig({ ...this.state });
     fetch(`${process.env.REACT_APP_BACKEND}/login`, config)
       .then(r => r.json())
-      .then(json => setUser(json));
+      .then(json => {
+        localStorage.setItem("authToken", json.token);
+        setUser(json);
+      });
   };
   render() {
     return (
