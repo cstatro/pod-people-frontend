@@ -17,7 +17,7 @@ const ListShowPagePodcastRow = props => {
 
   const handleDelete = () => {
     fetch(
-      `http://localhost:3000/podcast_list_joins/${list_id}/${id}`,
+      `${process.env.REACT_APP_BACKEND}/podcast_list_joins/${list_id}/${id}`,
       deleteConfig()
     ).then(r => {
       const podcasts = list.podcasts

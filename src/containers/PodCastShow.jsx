@@ -12,7 +12,7 @@ const PodCastShow = props => {
 
   const [rssFeed, setRssFeed] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:3000/grab-feed", {
+    fetch(`${process.env.REACT_APP_BACKEND}/grab-feed`, {
       headers: {
         feed: props.rss
       }

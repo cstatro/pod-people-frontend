@@ -15,7 +15,7 @@ class SignUp extends Component {
     e.preventDefault();
     console.log({ ...this.state });
     const config = postConfig({ ...this.state });
-    fetch("http://localhost:3000/users", config)
+    fetch(`${process.env.REACT_APP_BACKEND}/users`, config)
       .then(r => r.json())
       .then(json => {
         fetchUser(json.id);

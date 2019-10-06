@@ -13,7 +13,7 @@ class LoginForm extends Component {
     e.preventDefault();
     console.log({ ...this.state });
     const config = postConfig({ ...this.state });
-    fetch("http://localhost:3000/login", config)
+    fetch(`${process.env.REACT_APP_BACKEND}/login`, config)
       .then(r => r.json())
       .then(json => setUser(json));
   };

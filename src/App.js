@@ -13,6 +13,7 @@ import Login from "./containers/Login";
 import ListShowPage from "./containers/ListShowPage";
 
 function App(props) {
+  require("dotenv").config();
   const { active, displayObj, loggedIn, podcast, objectType } = props;
   return (
     <div className="App">

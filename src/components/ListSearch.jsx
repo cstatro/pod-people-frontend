@@ -8,13 +8,13 @@ const ListSearch = () => {
   const [search, setSearch] = useState("");
   const [result, setResult] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/lists")
+    fetch(`${process.env.REACT_APP_BACKEND}/lists`)
       .then(r => r.json())
       .then(json => setLists(json));
   }, []);
   useEffect(() => {
     if (filtered) {
-      fetch("http://localhost:3000/search", {
+      fetch(`${process.env.REACT_APP_BACKEND}/search`, {
         headers: {
           search
         }

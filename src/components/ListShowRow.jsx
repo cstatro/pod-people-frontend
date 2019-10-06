@@ -10,7 +10,7 @@ const ListShowRow = props => {
   const followList = () => {
     const obj = { user_id: props.loggedInId, list_id: props.id };
     const config = postConfig(obj);
-    fetch("http://localhost:3000/followers", config)
+    fetch(`${process.env.REACT_APP_BACKEND}/followers`, config)
       .then(r => r.json())
       .then(json => fetchUser(props.loggedInId));
   };

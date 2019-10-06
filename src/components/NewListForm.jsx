@@ -12,7 +12,7 @@ class NewListForm extends Component {
     e.preventDefault();
     const { user_id, setViewForm } = this.props;
     const config = postConfig({ ...this.state, user_id });
-    fetch("http://localhost:3000/lists", config)
+    fetch(`${process.env.REACT_APP_BACKEND}/lists`, config)
       .then(r => r.json())
       .then(json => {
         console.log(json);

@@ -8,7 +8,7 @@ const HotLists = props => {
   const { user } = props;
   const [hotLists, setHotLists] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/lists")
+    fetch(`${process.env.REACT_APP_BACKEND}/lists`)
       .then(r => r.json())
       .then(lists => setHotLists(lists));
   }, []);

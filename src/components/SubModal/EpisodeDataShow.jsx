@@ -15,9 +15,11 @@ const EpisodeDataShow = props => {
 
   const handleButton = () => {
     const config = postConfig({ list_id, episode_id: props.id });
-    fetch("http://localhost:3000/episode_list_joins", config).then(r => {
-      closeModal();
-    });
+    fetch(`${process.env.REACT_APP_BACKEND}/episode_list_joins`, config).then(
+      r => {
+        closeModal();
+      }
+    );
   };
 
   return (

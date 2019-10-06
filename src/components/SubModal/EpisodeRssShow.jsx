@@ -22,7 +22,7 @@ const EpisodeRssShow = props => {
   const handleButton = () => {
     // const config = postConfig({ list_id, user_id: user.id });
     const podcastConfig = postConfig({ ...props.podcast, description });
-    fetch("http://localhost:3000/podcasts", podcastConfig)
+    fetch(`${process.env.REACT_APP_BACKEND}/podcasts`, podcastConfig)
       .then(r => r.json())
       .then(json => {
         const episode = {
@@ -34,14 +34,14 @@ const EpisodeRssShow = props => {
           description: itunes.summary
         };
         const episodeConfig = postConfig(episode);
-        fetch("http://localhost:3000/episodes", episodeConfig)
+        fetch(`${process.env.REACT_APP_BACKEND}/episodes`, episodeConfig)
           .then(r => r.json())
           .then(json => {
             console.log("Whats going on", json);
             const episodeJoin = { list_id, episode_id: json.id };
             const episodeJoinConfig = postConfig(episodeJoin);
             fetch(
-              "http://localhost:3000/episode_list_joins",
+              `${process.env.REACT_APP_BACKEND}/episode_list_joins`,
               episodeJoinConfig
             );
           });

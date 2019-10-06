@@ -11,11 +11,14 @@ const PodCastRssShow = props => {
   };
   const handleButton = () => {
     const podcastConfig = postConfig({ ...props.podcast, description });
-    fetch("http://localhost:3000/podcasts", podcastConfig)
+    fetch(`${process.env.REACT_APP_BACKEND}/podcasts`, podcastConfig)
       .then(r => r.json())
       .then(json => {
         const listJoinConfig = postConfig({ podcast_id: json.id, list_id });
-        fetch("http://localhost:3000/podcast_list_joins", listJoinConfig)
+        fetch(
+          `${process.env.REACT_APP_BACKEND}/podcast_list_joins`,
+          listJoinConfig
+        )
           .then(r => r.json())
           .then(j => console.log(j));
       });
