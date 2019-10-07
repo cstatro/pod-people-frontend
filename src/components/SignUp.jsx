@@ -3,25 +3,39 @@ import { postConfig } from "../api/config";
 import { connect } from "react-redux";
 import { SignUpActions } from "../redux/actions/dispatchActions/SignUpActions";
 import { withRouter } from "react-router-dom";
+import { loginFormState } from "../redux/actions/mapStateToProps/LoginState";
 
 class SignUp extends Component {
-  state = {};
+  componentDidUpdate() {
+    const { id } = this.props.user;
+    if (!!id) {
+      this.props.history.push("/home");
+      console.log(id);
+    }
+  }
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
   handleSubmit = e => {
     const { fetchUser } = this.props;
     e.preventDefault();
-    console.log({ ...this.state });
     const config = postConfig({ ...this.state });
     fetch(`${process.env.REACT_APP_BACKEND}/users`, config)
       .then(r => r.json())
       .then(json => {
-        fetchUser(json.id);
+        localStorage.setItem("authToken", json.token);
       })
-      .then(r => this.props.history.push("/home"));
+      .then(() => {
+        fetch(`${process.env.REACT_APP_BACKEND}/authenticate`, {
+          headers: { auth: localStorage.authToken }
+        })
+          .then(r => r.json())
+          .then(json => fetchUser(json.id));
+      });
   };
+
   render() {
     return (
       <div className="login-area page">
@@ -55,6 +69,6 @@ class SignUp extends Component {
 }
 
 export default connect(
-  null,
+  loginFormState,
   SignUpActions
 )(withRouter(SignUp));

@@ -13,3 +13,7 @@ export const deleteConfig = () => ({
     Accept: "application/json"
   }
 });
+
+export const withToken = {
+  headers: { auth: localStorage.authToken }
+};

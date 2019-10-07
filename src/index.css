@@ -36,7 +36,9 @@ html {
   margin-right: 0.5em;
   font-family: "Permanent Marker", cursive;
 }
-
+.nav-link:hover {
+  cursor: pointer;
+}
 .logo {
   font-family: "Permanent Marker", cursive;
   margin-left: 1em;

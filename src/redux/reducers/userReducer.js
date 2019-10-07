@@ -15,6 +15,8 @@ export const userState = (state = defaultState, action) => {
             .filter(x => x !== null)
         }
       };
+    case "LOG_OUT":
+      return defaultState;
     default:
       return state;
   }

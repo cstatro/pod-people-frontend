@@ -2,8 +2,16 @@ import React, { Component } from "react";
 import { postConfig } from "../api/config";
 import { loginActions } from "../redux/actions/dispatchActions/loginActions";
 import { connect } from "react-redux";
-import { fetchUser } from "../redux/actions/thunk-calls/user-refresh";
+import { withRouter } from "react-router-dom";
+import { loginFormState } from "../redux/actions/mapStateToProps/LoginState";
 class LoginForm extends Component {
+  componentDidUpdate() {
+    const { id } = this.props.user;
+    if (!!id) {
+      this.props.history.push("/home");
+    }
+  }
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -52,6 +60,6 @@ class LoginForm extends Component {
 }
 
 export default connect(
-  null,
+  loginFormState,
   loginActions
-)(LoginForm);
+)(withRouter(LoginForm));
