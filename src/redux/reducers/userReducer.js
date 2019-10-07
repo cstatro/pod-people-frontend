@@ -1,5 +1,5 @@
 const defaultState = {
-  user: { id: 1, followed_lists: [] }
+  user: { id: null, followed_lists: [] }
 };
 
 export const userState = (state = defaultState, action) => {

@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import { postConfig } from "../api/config";
 import { loginActions } from "../redux/actions/dispatchActions/loginActions";
 import { connect } from "react-redux";
+import { fetchUser } from "../redux/actions/thunk-calls/user-refresh";
 class LoginForm extends Component {
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
   handleSubmit = e => {
-    const { setUser } = this.props;
+    const { fetchUser } = this.props;
     e.preventDefault();
     const config = postConfig({ ...this.state });
     fetch(`${process.env.REACT_APP_BACKEND}/login`, config)
@@ -21,7 +22,7 @@ class LoginForm extends Component {
           headers: { auth: localStorage["authToken"] }
         })
           .then(r => r.json())
-          .then(json => setUser(json));
+          .then(json => fetchUser(json.id));
       });
   };
 
