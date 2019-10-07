@@ -6,6 +6,7 @@ class LoginForm extends Component {
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
   handleSubmit = e => {
     const { setUser } = this.props;
     e.preventDefault();
@@ -14,9 +15,16 @@ class LoginForm extends Component {
       .then(r => r.json())
       .then(json => {
         localStorage.setItem("authToken", json.token);
-        setUser(json);
+      })
+      .then(r => {
+        fetch(`${process.env.REACT_APP_BACKEND}/authenticate`, {
+          headers: { auth: localStorage["authToken"] }
+        })
+          .then(r => r.json())
+          .then(json => setUser(json));
       });
   };
+
   render() {
     return (
       <div className="login-area page">
