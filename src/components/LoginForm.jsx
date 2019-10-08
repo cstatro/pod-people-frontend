@@ -17,7 +17,7 @@ class LoginForm extends Component {
   };
 
   handleSubmit = e => {
-    const { fetchUser } = this.props;
+    const { fetchUser, setNewUserForm } = this.props;
     e.preventDefault();
     const config = postConfig({ ...this.state });
     fetch(`${process.env.REACT_APP_BACKEND}/login`, config)
@@ -35,6 +35,7 @@ class LoginForm extends Component {
   };
 
   render() {
+    const { setNewUserForm } = this.props;
     return (
       <div className="login-area page">
         <div className="login-box">
@@ -53,6 +54,7 @@ class LoginForm extends Component {
             />
             <input type="submit" value="Login" />
           </form>
+          <button onClick={() => setNewUserForm()}>Sign Up</button>
         </div>
       </div>
     );

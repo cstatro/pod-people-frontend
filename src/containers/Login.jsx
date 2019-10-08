@@ -7,6 +7,11 @@ import { loginActions } from "../redux/actions/dispatchActions/loginActions";
 
 class Login extends Component {
   state = { createNew: false };
+
+  setNewUserForm = () => {
+    this.setState({ createNew: true });
+  };
+
   componentDidMount() {
     const { fetchUser } = this.props;
     if (!!localStorage.authToken) {
@@ -24,10 +29,7 @@ class Login extends Component {
           <SignUp />
         ) : (
           <>
-            <LoginForm />
-            <button onClick={() => this.setState({ createNew: true })}>
-              Signup
-            </button>
+            <LoginForm setNewUserForm={this.setNewUserForm} />
           </>
         )}
       </>
