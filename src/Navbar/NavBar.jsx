@@ -3,12 +3,20 @@ import { Link, withRouter } from "react-router-dom";
 import Player from "./Player";
 import { connect } from "react-redux";
 import { navBarActions } from "../redux/actions/dispatchActions/NavBarActions";
+import { navState } from "../redux/actions/mapStateToProps/navState";
 
 class NavBar extends Component {
-  handleLogOut = async () => {
+  componentDidUpdate() {
+    const { pathname } = this.props.location;
+    const { userId } = this.props;
+    console.log("checking", userId, pathname);
+    if (pathname != "/" && !!!userId) {
+      this.props.history.push("/");
+    }
+  }
+  handleLogOut = () => {
     localStorage.clear();
     this.props.logOut();
-    // this.props.history.push("/");
   };
   render() {
     return (
@@ -34,6 +42,6 @@ class NavBar extends Component {
 }
 
 export default connect(
-  null,
+  navState,
   navBarActions
 )(withRouter(NavBar));
