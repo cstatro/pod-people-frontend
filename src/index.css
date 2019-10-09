@@ -335,20 +335,39 @@ html {
   flex-direction: column;
   height: 60%;
   width: 40%;
-  background: rgb(120, 120, 243);
+  background: #bcd0f0;
   box-shadow: 1px 1px 2px 2px black;
   margin-top: 5em;
 }
 .login-form {
+  margin-top: 14%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 50%;
+  border-radius: 4%;
 }
 .login-form > input {
   width: 50%;
   height: 3em;
+  margin-bottom: 2%;
 }
+.form-button {
+  box-shadow: 1.5px 1.5px 1.5px 1.5px black;
+  height: 13%;
+  width: 50%;
+}
+.login-button {
+  background: rgb(144, 221, 245);
+}
+.signup-button {
+  background: rgb(176, 240, 206);
+}
+.form-button:active {
+  box-shadow: 0.5px 0.5px 0.5px 0.5px black;
+}
+
 /* List Page */
 .lists {
   justify-content: space-evenly;

@@ -52,9 +52,18 @@ class LoginForm extends Component {
               name="password"
               type="password"
             />
-            <input type="submit" value="Login" />
+            <input
+              className="form-button login-button"
+              type="submit"
+              value="Login"
+            />
+            <button
+              className="form-button signup-button"
+              onClick={() => setNewUserForm()}
+            >
+              Sign Up
+            </button>
           </form>
-          <button onClick={() => setNewUserForm()}>Sign Up</button>
         </div>
       </div>
     );
