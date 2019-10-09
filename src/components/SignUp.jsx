@@ -40,7 +40,7 @@ class SignUp extends Component {
     return (
       <div className="login-area page">
         <div className="login-box">
-          <form onSubmit={this.handleSubmit}>
+          <form className="sign-up-form" onSubmit={this.handleSubmit}>
             <input
               onChange={this.handleChange}
               type="text"
