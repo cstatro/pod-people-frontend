@@ -327,6 +327,9 @@ html {
   background: #68d5e7;
 }
 /* Login Page */
+.login-area-page {
+  height: 100%;
+}
 .login-area {
   justify-content: center;
 }

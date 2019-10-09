@@ -19,8 +19,11 @@ class NavBar extends Component {
     this.props.logOut();
   };
   render() {
+    const display = !!this.props.userId ? "flex" : "none";
+    const style = { display };
+
     return (
-      <div className="nav">
+      <div style={style} className="nav">
         <h1 className="logo">Pod People</h1>
 
         <Link to="/home">
