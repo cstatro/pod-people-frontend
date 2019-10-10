@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import ListShowPageEpisodeRow from "../components/ListShowPageEpisodeRow";
 import ListShowPagePodcastRow from "../components/ListShowPagePodcastRow";
+import FollowButton from "../components/FollowButton";
 const ListShowPage = props => {
   const [list, setList] = useState({
     id: null,
@@ -55,9 +56,7 @@ const ListShowPage = props => {
                 Edit Button
               </button>
             ) : (
-              <button className="list-page-details-button details-follow">
-                Follow
-              </button>
+              <FollowButton list_id={paramId} user_id={userId} />
             )}
           </div>
         </div>
