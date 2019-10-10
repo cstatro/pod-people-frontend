@@ -7,7 +7,7 @@ const CurrentUserListRow = props => {
   const { editMode, removeList, user } = props;
 
   const handleDelete = () => {
-    fetch(`${process.env.REACT_APP_BACKEND}/${id}`, deleteConfig());
+    fetch(`${process.env.REACT_APP_BACKEND}/lists/${id}`, deleteConfig());
     removeList(id, user);
   };
 
