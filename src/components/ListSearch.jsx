@@ -41,6 +41,7 @@ const ListSearch = () => {
           name="search"
           type="text"
           className="search-list-input search-input"
+          autoComplete="off"
         />
         <button className="search-button" onClick={() => setFiltered(true)}>
           Search

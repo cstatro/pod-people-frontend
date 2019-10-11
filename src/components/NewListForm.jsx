@@ -28,12 +28,14 @@ class NewListForm extends Component {
           name="name"
           placeholder="Name"
           type="text"
+          autoComplete="off"
         />
         <input
           onChange={this.handleChange}
           name="description"
           placeholder="Description"
           type="text"
+          autoComplete="off"
         />
         <input
           className="new-list-submit"

@@ -17,6 +17,7 @@ const SearchBar = props => {
           type="text"
           className="search-text search-input"
           placeholder="Search For Podcast"
+          autoComplete="off"
         />
         {/* <input type="submit" value="" className="search-button" /> */}
         {/* <input
