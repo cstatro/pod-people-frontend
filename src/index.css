@@ -727,11 +727,15 @@ html {
   background: rgb(144, 221, 245);
 }
 /* Home Page */
+.home {
+  justify-content: center;
+}
 .user-profile {
   height: 90%;
   border: 1px solid black;
   border-radius: 3%;
   width: 50%;
+  background: #bcd0f0;
 }
 .profile-pic {
   width: 50%;
