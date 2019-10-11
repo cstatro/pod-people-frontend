@@ -415,6 +415,23 @@ html {
   font-size: 2.5em;
   border-bottom: 2px solid black;
 }
+.new-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  /* border: 1px solid black; */
+  align-items: center;
+  margin-top: 10%;
+}
+.new-list > input {
+  height: 5%;
+  width: 50%;
+  margin-bottom: 1%;
+}
+.new-list-submit {
+  background: rgb(176, 240, 206);
+}
 .new-list-button {
   width: 10%;
   height: 2em;

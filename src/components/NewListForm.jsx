@@ -35,7 +35,11 @@ class NewListForm extends Component {
           placeholder="Description"
           type="text"
         />
-        <input type="submit" value="Create New List" />
+        <input
+          className="new-list-submit"
+          type="submit"
+          value="Create New List"
+        />
       </form>
     );
   }
