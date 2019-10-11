@@ -431,6 +431,10 @@ html {
 }
 .new-list-submit {
   background: rgb(176, 240, 206);
+  box-shadow: 1.5px 1.5px 1.5px 1.5px black;
+}
+.new-list-submit:active {
+  box-shadow: 0.5px 0.5px 0.5px 0.5px;
 }
 .new-list-button {
   width: 10%;
