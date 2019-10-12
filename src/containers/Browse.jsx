@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SearchColumn from "../components/SearchColumn";
-import ListSearch from "../components/ListSearch";
+import ListSearch from "../components/BrowsePage/ListSearch";
 
 class Browse extends Component {
   render() {
