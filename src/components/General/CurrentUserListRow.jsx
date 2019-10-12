@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { deleteConfig } from "../api/config";
+import { deleteConfig } from "../../api/config";
 
 const CurrentUserListRow = props => {
   const { name, buzzword_generate, id } = props.list;

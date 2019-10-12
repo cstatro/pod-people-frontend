@@ -4,7 +4,8 @@ import { currentUserListState } from "../redux/actions/mapStateToProps/CurrentUs
 import { currentUserListActions } from "../redux/actions/dispatchActions/currentUserListsActions";
 import { useEffect, useState } from "react";
 // import MiniListShowEdit from "./MiniListShowEdit"; may need to deprecate this component
-import CurrentUserListRow from "./CurrentUserListRow";
+import CurrentUserListRow from "./General/CurrentUserListRow";
+
 const CurrentUserLists = props => {
   const { fetchUser, user, editMode, removeList } = props;
 

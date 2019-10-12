@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import CurrentUserListRow from "../CurrentUserListRow";
+import CurrentUserListRow from "../General/CurrentUserListRow";
 
 const ListSearch = () => {
   const [listArr, setLists] = useState([]);
