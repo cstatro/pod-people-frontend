@@ -19,13 +19,6 @@ const SearchBar = props => {
           placeholder="Search For Podcast"
           autoComplete="off"
         />
-        {/* <input type="submit" value="" className="search-button" /> */}
-        {/* <input
-          type="image"
-          src={search}
-          name="submit"
-          className="search-logo"
-        /> */}
         <button
           type="image"
           src={search}
