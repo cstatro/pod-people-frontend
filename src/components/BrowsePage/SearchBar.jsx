@@ -1,5 +1,4 @@
 import React from "react";
-import search from "../image/search.png";
 const R = require("ramda");
 
 const SearchBar = props => {
@@ -21,7 +20,7 @@ const SearchBar = props => {
         />
         <button
           type="image"
-          src={search}
+          // src={search}
           name="submit"
           className="search-button"
         >

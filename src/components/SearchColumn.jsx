@@ -1,5 +1,5 @@
 import React from "react";
-import SearchBar from "./SearchBar";
+import SearchBar from "./BrowsePage/SearchBar";
 import { useState, useEffect } from "react";
 import SearchResults from "./SearchResults";
 const SearchColumn = props => {
