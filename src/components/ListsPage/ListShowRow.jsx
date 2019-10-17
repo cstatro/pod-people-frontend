@@ -1,7 +1,7 @@
 import React from "react";
-import { postConfig } from "../api/config";
+import { postConfig } from "../../api/config";
 import { connect } from "react-redux";
-import { listShowRowActions } from "../redux/actions/dispatchActions/ListShowRowActions";
+import { listShowRowActions } from "../../redux/actions/dispatchActions/ListShowRowActions";
 import { Link } from "react-router-dom";
 
 const ListShowRow = props => {

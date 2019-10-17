@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { HotListState } from "../redux/actions/mapStateToProps/HotListState";
+import { HotListState } from "../../redux/actions/mapStateToProps/HotListState";
 import ListShowRow from "./ListShowRow";
 
 const HotLists = props => {

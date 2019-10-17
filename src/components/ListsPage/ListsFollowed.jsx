@@ -1,5 +1,5 @@
 import React from "react";
-import { listsFollowed } from "../redux/actions/mapStateToProps/listsFollowed";
+import { listsFollowed } from "../../redux/actions/mapStateToProps/listsFollowed";
 import { connect } from "react-redux";
 import ListShowRow from "./ListShowRow";
 
