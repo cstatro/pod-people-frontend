@@ -1,5 +1,5 @@
 import React from "react";
-import SearchResultCard from "./SearchResultCard";
+import SearchResultCard from "../SearchResultCard";
 const SearchResults = props => {
   const { results } = props;
   return (
