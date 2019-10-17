@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { ListShowPagePodcastRowActions } from "../redux/actions/dispatchActions/ListShowPagePodcastRowActions";
-import { deleteConfig } from "../api/config";
+import { ListShowPagePodcastRowActions } from "../../redux/actions/dispatchActions/ListShowPagePodcastRowActions";
+import { deleteConfig } from "../../api/config";
 const ListShowPagePodcastRow = props => {
   const {
     image_url,
