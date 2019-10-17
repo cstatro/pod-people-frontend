@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { postConfig } from "../api/config";
-import { newListFormState } from "../redux/actions/mapStateToProps/newListFormState";
+import { postConfig } from "../../api/config";
+import { newListFormState } from "../../redux/actions/mapStateToProps/newListFormState";
 import { connect } from "react-redux";
 
 class NewListForm extends Component {

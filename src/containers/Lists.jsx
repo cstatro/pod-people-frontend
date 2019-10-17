@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ListManager from "../components/ListManager";
 import HotLists from "../components/HotLists";
 import ListsFollowed from "../components/ListsFollowed";
+import ListManager from "../components/ListsPage/ListManager";
 
 class Lists extends Component {
   render() {

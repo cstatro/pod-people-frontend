@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import NewListForm from "./NewListForm";
-import CurrentUserLists from "./CurrentUserLists";
+import CurrentUserLists from "../CurrentUserLists";
 const ListManager = () => {
   const [viewForm, setViewForm] = useState(false);
   const [editMode, setEditMode] = useState(false);
