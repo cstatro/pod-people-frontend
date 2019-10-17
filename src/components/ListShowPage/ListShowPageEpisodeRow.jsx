@@ -1,9 +1,10 @@
 import React from "react";
-import bottomText from "../image/bottom_text.png";
+import bottomText from "../../image/bottom_text.png";
 import { connect } from "react-redux";
-import { ListShowPageEpisodeRowActions } from "../redux/actions/dispatchActions/ListShowPageEpisodeRow";
-import { cutOffOnListShowPage } from "../helpers/textCutOff";
-import { deleteConfig } from "../api/config";
+import { ListShowPageEpisodeRowActions } from "../../redux/actions/dispatchActions/ListShowPageEpisodeRow";
+import { cutOffOnListShowPage } from "../../helpers/textCutOff";
+import { deleteConfig } from "../../api/config";
+
 const ListShowPageEpisodeRow = props => {
   const {
     title,

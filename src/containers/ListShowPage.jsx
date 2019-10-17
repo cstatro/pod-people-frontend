@@ -1,8 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import ListShowPageEpisodeRow from "../components/ListShowPageEpisodeRow";
+import ListShowPageEpisodeRow from "../components/ListShowPage/ListShowPageEpisodeRow";
 import ListShowPagePodcastRow from "../components/ListShowPagePodcastRow";
 import FollowButton from "../components/FollowButton";
+
 const ListShowPage = props => {
   const [list, setList] = useState({
     id: null,
