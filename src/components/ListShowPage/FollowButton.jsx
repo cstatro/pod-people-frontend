@@ -1,5 +1,5 @@
 import React from "react";
-import { postConfig } from "../api/config";
+import { postConfig } from "../../api/config";
 
 const FollowButton = props => {
   const handleFollow = () => {

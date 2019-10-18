@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { homePageState } from "../redux/actions/mapStateToProps/HomePageState";
 import { sortByFollowerTotal } from "../helpers/sortHelpers";
-import Loading from "../components/Loading";
+import Loading from "../components/General/Loading";
 
 class Home extends Component {
   render() {

@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import ListShowPageEpisodeRow from "../components/ListShowPage/ListShowPageEpisodeRow";
 import ListShowPagePodcastRow from "../components/ListShowPage/ListShowPagePodcastRow";
-import FollowButton from "../components/FollowButton";
+import FollowButton from "../components/ListShowPage/FollowButton";
 
 const ListShowPage = props => {
   const [list, setList] = useState({

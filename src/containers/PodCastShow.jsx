@@ -2,9 +2,9 @@ import React from "react";
 import { useEffect, useState } from "react";
 import ShowDetails from "../components/ShowDetails";
 import EpisodeList from "../components/EpisodeList";
-import Loading from "../components/Loading";
 import { connect } from "react-redux";
 import { podcastShowPageActions } from "../redux/actions/dispatchActions/podCastShowPageAction";
+import Loading from "../components/General/Loading";
 const Parser = require("rss-parser");
 
 const PodCastShow = props => {
